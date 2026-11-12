@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1F3864"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes">
+<title>Luces Galpones</title>
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAGkElEQVR4nO2bXWxcxRXHfzP3a9drEif2hsRxgmPXiUPCg5s2BEXQSm1BrVDEQ4XgoRJESBES9AXUhyL60JdQ8lLRqFUErlIhSKiIhFJaypcVUxVCE4MsosTBxASHkNTGH7F3s969d+704RorcfyxSeberYj/0j6svJpz5j//OefMmbG4ZcsjmhsYstIOVBoLBFTagUpjgYBKO1BpLBBQaQcqDbtShlUoLvtuycqUI4kRoDX4gYXSAktososLyMlJh6Fg8EJ66m+OrRBingENIXYCtIZSYOFYIVs3nOOeTWdYnc3RtmYI2w4BCALJx5/X0j9YzZtdq/iw52ZKgcRNgAgRZyn8jczv2niOHT87zl0bz4GjQAsIpoUfOwShwbd479gK9vzjVt47tgKId3vERoAfSG5K+/z2F0e4/4efRZMLLJjPmgDsiKS/HvoOv3nx+4wXHJxJtZhGLAQUfYu1Ky+w55edtDYOg1/GxK/wDHAUPaeXsuO5H/Dp2cV4jjLtqvk06AeS1dkce5/oiCZfmm3y4SWfGaCBkkVr4zB7n+hgdTaHP33bGIDREbUGz1E8/WAXaxpGo8lf/gugBPgglwRYdT4ioxATzEpEyWJNwyhPP9iF5yi0Yb0azQITJZsdPz3OvXf2wcT0oScnmPnRCIseHiTVWkA4GjVuMfFBhq9/vxJ13oPppAFFm3vv7OM/J5ex541bSXuBMZ+NERCGgtpFE2y/+yT404UVAlKz/A+ncFaVGG3PMvhBI7oksGp9qrcNY68qEX7loWcgAMCXbL/7JK/+u4lcwZmqIa4XxggoBpKHtvbROKP0iSYvvZAz961HTAi0AwhQww4jz1ZF353ZDShJY8MoP9/ax55/riftmgmIRmKA1pB2Fdtu/yLK8ZdClCDz4xGq7shx/vFmUAKdIpK6BGzQXnmuaMG2278g7ZqLBUYICLWgJlOkpX4M1PTSTQCO5qtHm9Dj1ox7vFwoQUv9GDWZIuF0oq8RRghQStDacIF0pnilArQD+b/XMnF4Edq9PkNakM4UaW24gLqC6GuDMQVkawq4npol59tc18p/Aw2up8jWFP6/FABRFrjqau9aoCdtGYIxAqTU0XaPGwJjKRAMEWBZmp4zNeRzbnToiQtCk8+59JypwbLM2DFCgBSa8yNVXLzoxqsCARcvupwfqUIaItqMAqRmaMzjSG82OtfHBTvkSG+WoTHPWI/AWAzQwL7OZlQg41GBABVI9nU2G421xghw7ZBDn9Rz+NiKqOtjGo7i8LEVHPqkHtegyowRIAQESrL79Q0US7bZYCg0xZLN7tc3EChptE9otB/gOYqO7np27W8Dz6AKPMWu/W10dNcb7woZb7F4bkj72+s40NECqeD6lCA0pAIOdLTQ/vY6PNd8gDVOgBSaQEmebN/C8wc3EmhxbZnBDgm04PmDG3myfQuBksZS32VmjI9IlBZVKPn13s10n6rjVw98xOraPJRbwkpN/2A1z+7/Lq/8q4m0p2Jrjcd2NyiFJpMKeLmzmZ37NqGvonLTlmbnvk283NlMJhXEsvJTfsY28iQyqYCjvXWMj3lQzipKzfiYx9HeOjIpc72/Wc3FbkBoBkfTnOhfAuWowNKc6F/C4Gg61pWf8i9uA0JAoWTx5VCmvIwgNF8OZSiUrEQuSBN5HyAEvH98eXkl8uRvk7odToQAy9J0n15KIT/PcVloCnmX7tNLjR1350MyBEhN/0A1A8NVUXHkqpk/qYCB4Sr6B6oTezCRyAMJKTS5gsPed9byvfX/vfJqfMqbkKMnbiZXcHCdGI/VlyDW9wHTkS+E+AGzxwINtqXJpCUioSCQ2BMZpULu2NRMtnYxYTgz5wIIlOLwRz0Ui34iJCRCgO8HbG5bx59+9ziuY6PnuNZxHJsXXnqDXX88gOfNcVVmCMnEACkZ+HqU3r6z1C1dNKsCAIQUfNp3FimT2QKJxYAgUNi2Rcpz0XM0tcJQk88XcN34Vx8SUoDWmkxViocf+An1y+sI1SwRXkSx4sVX3+XU6XNYVvxZOrEYsHXzBh7bvo1Q6TkVkEpFK//Uzr98ewhwHJuu7l52//lg2QpwHAN3iWVgIQYkYUSpkFsalvHMU9vLygLPvfAaf3vrQxwnfvcSISAMQ5bV1dDStLKsOmBt08o5STKJxLaAUiFtt92glSCAZUm6unvnX1kBrmN/+84CQCJ7+mpxw//HyAIBlXag0lggoNIOVBoLBFTagUrjf6t8kZu7scMLAAAAAElFTkSuQmCC">
+<style>:root{--navy:#1F3864;--navy2:#2c4f8c;--bg:#f2f4f8;--card:#fff;--txt:#1b1f27;--mut:#6b7280;--ok:#16a34a;--bad:#dc2626;--warn:#f59e0b;--line:#e2e6ee;
+--gA:#f97316;--gB:#0d9488;--gC:#7c3aed;--gD:#64748b}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--txt);font-family:Arial,Helvetica,sans-serif;font-size:15px}
+body{display:flex;flex-direction:column;overscroll-behavior-y:contain}
+header{background:var(--navy);color:#fff;padding:calc(env(safe-area-inset-top,0px) + 8px) 12px 8px;display:flex;align-items:center;gap:8px;position:sticky;top:0;z-index:20}
+header h1{font-size:17px;margin:0;flex:1;line-height:1.15}
+header h1 small{display:block;font-size:11px;font-weight:400;opacity:.8}
+.hbtn{background:#fff;color:var(--navy);border:0;border-radius:10px;font-weight:700;font-size:13px;padding:9px 11px;min-height:40px}
+main{flex:1;overflow-y:auto;padding:10px 10px 90px;-webkit-overflow-scrolling:touch}
+nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);display:flex;padding-bottom:env(safe-area-inset-bottom,0px);z-index:30}
+nav button{flex:1;border:0;background:none;padding:8px 2px 7px;font-size:11px;color:var(--mut);display:flex;flex-direction:column;align-items:center;gap:2px;min-height:54px}
+nav button .i{font-size:20px;line-height:1}
+nav button.on{color:var(--navy);font-weight:700}
+nav button.on .i{transform:scale(1.12)}
+.card{background:var(--card);border-radius:14px;padding:12px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.07)}
+.bar{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.bar .d{flex:1;text-align:center;font-weight:700;color:var(--navy)}
+.bar .d small{display:block;font-weight:400;color:var(--mut);font-size:11px}
+.sq{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:#fff;font-size:18px;color:var(--navy)}
+.prog{height:10px;background:#dfe5f0;border-radius:6px;overflow:hidden;margin:6px 0}
+.prog i{display:block;height:100%;background:var(--ok)}
+.next{border:2px solid var(--navy);background:#eef3ff}
+.next .big{font-size:26px;font-weight:700;color:var(--navy)}
+.btn{border:0;border-radius:12px;background:var(--navy);color:#fff;font-weight:700;font-size:15px;padding:13px 16px;min-height:46px}
+.btn.alt{background:#fff;color:var(--navy);border:1.5px solid var(--navy)}
+.btn.ok{background:var(--ok)}.btn.red{background:var(--bad)}
+.btn.full{width:100%}
+.row2{display:flex;gap:8px}.row2>*{flex:1}
+.chips{display:flex;gap:6px;margin-bottom:8px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:16px;padding:7px 12px;font-size:13px}
+.chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.blk{font-size:12px;font-weight:700;color:var(--navy);margin:12px 4px 5px;letter-spacing:.3px}
+.blk.off{color:#b45309}
+.ev{display:flex;align-items:center;gap:8px;background:#fff;border-radius:12px;padding:8px 10px;margin-bottom:6px;border-left:6px solid var(--navy);min-height:58px}
+.ev.done{background:#f0fdf4;border-left-color:var(--ok)}
+.ev.bad{background:#fef2f2;border-left-color:var(--bad)}
+.ev.nxt{outline:2px solid var(--navy)}
+.ev .pos{width:30px;text-align:center;font-size:12px;color:var(--mut);font-weight:700}
+.ev .mid{flex:1;min-width:0}
+.ev .gal{font-size:20px;font-weight:700}
+.ev .mv{font-size:12px;color:var(--mut)}
+.ev .tm{text-align:right;font-size:12px;color:var(--mut);line-height:1.35;min-width:84px}
+.ev .tm b{color:var(--txt);font-size:14px}
+.gc{display:inline-block;color:#fff;font-size:11px;font-weight:700;border-radius:9px;padding:1px 7px;margin-left:6px;vertical-align:middle}
+.gA{background:var(--gA)}.gB{background:var(--gB)}.gC{background:var(--gC)}.gD{background:var(--gD)}
+.now{border:0;background:var(--navy);color:#fff;border-radius:10px;font-weight:700;padding:11px 13px;min-height:44px;font-size:14px}
+.chk{width:44px;height:44px;border-radius:50%;background:var(--ok);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700}
+.chk.bad{background:var(--bad)}
+.empty{text-align:center;color:var(--mut);padding:24px}
+/* croquis */
+.plan{display:grid;grid-template-columns:repeat(4,1fr) 52px;gap:7px;align-items:stretch}
+.sh{position:relative;background:#bdd7ee;border:2px solid #111;border-radius:6px;padding:4px 14px 4px 4px;text-align:center;min-height:72px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.sh .g{font-size:18px;font-weight:700}
+.sh .o{font-size:11px;font-weight:700;color:var(--navy)}
+.sh .st{font-size:11px;margin-top:2px;height:14px}
+.sh .lt{position:absolute;right:0;top:0;bottom:0;width:11px;border-left:2px solid #111}
+.sh.full{background:#c6efce}
+.tower{grid-column:5;grid-row:1;border:2px solid #111;border-radius:6px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;text-align:center;background:#f2f2f2;padding:2px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px}
+.legend span i{display:inline-block;width:16px;height:12px;border:1px solid #111;vertical-align:-2px;margin-right:4px}
+.seq{font-size:12px;color:var(--navy);font-weight:700;line-height:1.5}
+/* semana */
+.wk{overflow:auto;max-height:calc(100vh - 250px);border-radius:12px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.07)}
+.wk table{border-collapse:separate;border-spacing:0;font-size:12px;min-width:max-content}
+.wk th,.wk td{padding:6px 5px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);text-align:center;white-space:nowrap;min-width:52px;background:#fff}
+.wk thead th{background:var(--navy);color:#fff;position:sticky;top:0;z-index:2}
+.wk thead tr+tr th{top:30px}
+.wk .f{position:sticky;left:0;z-index:1;text-align:left;min-width:92px;background:#f8fafc}
+.wk thead .f{z-index:3;background:var(--navy)}
+.wk td.t{font-weight:700}
+.wk td.bad{background:#fecaca;color:#7f1d1d}
+.wk td.okc{background:#dcfce7}
+/* ajustes */
+h3{margin:2px 0 8px;font-size:15px;color:var(--navy)}
+label.f{display:block;font-size:12px;color:var(--mut);margin:6px 0 3px}
+input[type=time],input[type=number],input[type=text],select,input[type=date]{width:100%;font-size:16px;padding:10px;border:1px solid #cbd2de;border-radius:10px;background:#fff;min-height:44px}
+input[type=color]{width:44px;height:40px;padding:0;border:1px solid #cbd2de;border-radius:8px;background:#fff}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.gtitle{font-weight:700;margin:10px 0 2px}
+.rt{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--line)}
+.rt .n{width:26px;color:var(--mut);font-size:12px;text-align:center}
+.rt .g{flex:1;font-weight:700;font-size:16px}
+.rt .m{font-size:12px;color:var(--mut)}
+.rt button{width:40px;height:40px;border:1px solid var(--line);background:#fff;border-radius:10px;font-size:16px}
+details{background:#fff;border-radius:14px;padding:12px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.07)}
+summary{font-weight:700;color:var(--navy);font-size:15px;min-height:28px}
+.shrow{border-top:1px solid var(--line);padding:8px 0}
+.lrow{display:grid;grid-template-columns:44px 1fr 90px;gap:8px;align-items:center;margin-bottom:6px}
+.note{font-size:12px;color:var(--mut);line-height:1.45}
+/* modal */
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:50;display:flex;align-items:flex-end}
+.sheet{background:#fff;width:100%;border-radius:18px 18px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));max-height:88vh;overflow:auto}
+.sheet h2{margin:0 0 10px;font-size:18px;color:var(--navy)}
+.toast{position:fixed;left:50%;bottom:78px;transform:translateX(-50%);background:#111;color:#fff;border-radius:20px;padding:10px 16px;font-size:13px;z-index:60;max-width:90%}
+@media (min-width:700px){main{max-width:720px;margin:0 auto;width:100%}nav{justify-content:center}nav button{max-width:140px}}
+
+.loc{font-size:11px;font-weight:700;white-space:nowrap}.loc.ok{color:var(--ok)}.loc.bad{color:var(--bad)}.loc.warn{color:#b45309}
+
+.who{font-size:11px;color:var(--navy);font-weight:700}
+#ubtn{max-width:104px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:9px 9px}
+header h1{min-width:0}
+</style></head><body>
+<header><h1 id="ttl">Recorrido</h1><button class="hbtn" id="ubtn">👤 —</button><button class="hbtn" id="abtn">🔒</button><button class="hbtn" id="xbtn">⬇ Excel</button></header>
+<main></main>
+<nav>
+<button data-tab="hoy" class="on"><span class="i">💡</span>Recorrido</button>
+<button data-tab="croq"><span class="i">🗺️</span>Croquis</button>
+<button data-tab="sem"><span class="i">📅</span>Semana</button>
+<button data-tab="aju"><span class="i">⚙️</span>Ajustes</button>
+</nav>
+<script>/* ===== CORE: lógica + generador XLSX (sin dependencias) ===== */
+(function (root) {
+'use strict';
+const pad = n => String(n).padStart(2, '0');
+const mod = (a, n) => ((a % n) + n) % n;
+const toMin = s => { if (s === '' || s == null) return null; const m = /^(\d{1,2}):(\d{2})/.exec(s); return m ? mod(+m[1] * 60 + +m[2], 1440) : null; };
+const fmt = m => (m == null ? '' : pad(Math.floor(m / 60)) + ':' + pad(m % 60));
+const OPT_ROUTE = [11,15,19,23,27,31,32,33,34,30,26,22,18,14,13,17,21,25,29,28,24,20,16,12];
+const fila = g => Math.floor((g - 11) / 4) + 1;
+const col = g => 4 - ((g - 11) % 4);
+const galAt = (f, c) => 11 + (f - 1) * 4 + (4 - c);
+const arrowTo = (a, b) => fila(b) > fila(a) ? '↓' : fila(b) < fila(a) ? '↑' : col(b) > col(a) ? '→' : '←';
+const WORD = { '↓': 'Bajar', '↑': 'Subir', '→': 'Derecha', '←': 'Izquierda' };
+
+/* ---- fechas (YYYY-MM-DD, hora local) ---- */
+const ds = d => d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+const pd = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
+const addDays = (s, n) => { const d = pd(s); d.setDate(d.getDate() + n); return ds(d); };
+const mondayOf = s => { const d = pd(s); d.setDate(d.getDate() - ((d.getDay() + 6) % 7)); return ds(d); };
+const serial = s => { const d = pd(s); return Math.round((Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) - Date.UTC(1899, 11, 30)) / 86400000); };
+const DIAS = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
+const dm = s => { const d = pd(s); return pad(d.getDate()) + '/' + pad(d.getMonth() + 1); };
+const dmy = s => { const d = pd(s); return pad(d.getDate()) + '/' + pad(d.getMonth() + 1) + '/' + d.getFullYear(); };
+
+/* ---- estado por defecto (según plantilla V6) ---- */
+function defaultState() {
+  const lotes = [
+    { c: 'L26-1', color: '#FF0000', sem: 33 }, { c: 'L26-2', color: '#92D050', sem: 26 },
+    { c: 'L25-3', color: '#FFFF00', sem: 75 }, { c: 'L25-5', color: '#00B0F0', sem: 58 },
+    { c: 'L25-2', color: '#F8CBAD', sem: 83 }, { c: 'L25-4', color: '#808080', sem: 67 },
+    { c: 'VACÍO', color: '#000000', sem: null }];
+  const lot = { 14:'L25-4',13:'L25-4',12:'L25-3',11:'VACÍO',18:'L26-1',17:'L26-1',16:'L25-3',15:'L25-2',22:'L25-3',21:'L25-4',20:'L26-1',19:'L26-2',
+    26:'L25-3',25:'L26-2',24:'L25-4',23:'L26-2',30:'L25-5',29:'L25-5',28:'L25-5',27:'VACÍO',34:'L25-2',33:'L25-2',32:'L25-2',31:'L25-5' };
+  const sheds = {};
+  for (let g = 11; g <= 34; g++) sheds[g] = { g: [19, 23, 25].includes(g) ? 'A' : 'B', on: '', off: '', lote: lot[g] };
+  return { v: 1, inicio: '20:00', tol: 15, resp: '',
+    groups: { A: { on: '22:00', off: '23:30', gap: 0 }, B: { on: '02:00', off: '06:00', gap: 0 }, C: { on: '', off: '', gap: 0 }, D: { on: '', off: '', gap: 0 } },
+    sheds, route: OPT_ROUTE.slice(), lotes, reg: {}, geo: { req: false, radius: 40, refs: {} }, turnos: [] };
+}
+function mergeState(x) {
+  const d = defaultState(); if (!x || typeof x !== 'object') return d;
+  const o = Object.assign(d, x);
+  o.groups = Object.assign(d.groups, x.groups || {});
+  o.sheds = Object.assign(d.sheds, x.sheds || {});
+  if (!Array.isArray(o.route) || o.route.length !== 24 || new Set(o.route).size !== 24) o.route = OPT_ROUTE.slice();
+  if (!Array.isArray(o.lotes) || !o.lotes.length) o.lotes = d.lotes;
+  o.reg = x.reg || {};
+  o.turnos = Array.isArray(x.turnos) ? x.turnos : [];
+  o.geo = Object.assign({ req: false, radius: 40, refs: {} }, x.geo || {}); o.geo.refs = o.geo.refs || {};
+  return o;
+}
+
+/* ---- horarios programados (igual a Cronograma!E:F) ---- */
+function schedule(S) {
+  const out = {}, cnt = {};
+  for (const g of S.route) {
+    const sh = S.sheds[g], gr = S.groups[sh.g] || {};
+    const k = cnt[sh.g] = (cnt[sh.g] == null ? 0 : cnt[sh.g] + 1);
+    const gap = +gr.gap || 0;
+    const own = (v) => toMin(v);
+    const grp = (v) => { const m = toMin(v); return m == null ? null : mod(m + k * gap, 1440); };
+    const on = own(sh.on) != null ? own(sh.on) : grp(gr.on);
+    const off = own(sh.off) != null ? own(sh.off) : grp(gr.off);
+    out[g] = { on, off, ownOn: own(sh.on) != null, ownOff: own(sh.off) != null };
+  }
+  return out;
+}
+/* ---- orden minuto a minuto (igual a Orden de recorrido) ---- */
+function events(S) {
+  const sc = schedule(S), ini = toMin(S.inicio) == null ? 1200 : toMin(S.inicio), list = [];
+  S.route.forEach((g, i) => {
+    if (sc[g].on != null) list.push({ g, k: 'on', min: sc[g].on, off: mod(sc[g].on - ini, 1440), pos: i + 1 });
+    if (sc[g].off != null) list.push({ g, k: 'off', min: sc[g].off, off: mod(sc[g].off - ini, 1440), pos: i + 1 });
+  });
+  list.sort((a, b) => a.off - b.off || (a.k === b.k ? 0 : a.k === 'on' ? -1 : 1) || a.pos - b.pos);
+  list.forEach((e, i) => e.n = i + 1);
+  return list;
+}
+function moveText(S, g) {
+  const i = S.route.indexOf(g);
+  if (i <= 0) return { a: '⌂', t: 'Salir de la torre' };
+  const a = arrowTo(S.route[i - 1], g); return { a, t: WORD[a] };
+}
+function nextArrow(S, g) {
+  const i = S.route.indexOf(g);
+  if (i === S.route.length - 1) return '→ torre';
+  return arrowTo(g, S.route[i + 1]);
+}
+function nightOf(now, S) {
+  const ini = toMin(S.inicio) == null ? 1200 : toMin(S.inicio);
+  const cut = ini >= 480 ? ini - 480 : ini;
+  const nm = now.getHours() * 60 + now.getMinutes();
+  const t = ds(now); return nm < cut ? addDays(t, -1) : t;
+}
+const nowHM = () => { const d = new Date(); return pad(d.getHours()) + ':' + pad(d.getMinutes()); };
+const dev = (real, prog) => (real == null || prog == null) ? null : mod(real - prog + 720, 1440) - 720;
+const getReg = (S, night, g, k) => { const r = S.reg[night] && S.reg[night][g]; return r ? (r[k] || '') : ''; };
+function setReg(S, night, g, k, v, loc, man, usr, corr) {
+  S.reg[night] = S.reg[night] || {}; const r = S.reg[night][g] = S.reg[night][g] || { on: '', off: '' };
+  r[k] = v || '';
+  if (v) { if (loc !== undefined) r[k + 'L'] = loc; if (man !== undefined) { if (man) r[k + 'M'] = 1; else delete r[k + 'M']; }
+    if (usr !== undefined) r[k + 'U'] = usr; if (corr !== undefined) r[k + 'C'] = corr; }
+  else { delete r[k + 'L']; delete r[k + 'M']; delete r[k + 'U']; delete r[k + 'C']; }
+  if (!r.on && !r.off) delete S.reg[night][g];
+  if (!Object.keys(S.reg[night]).length) delete S.reg[night];
+}
+/* ---- ubicación (GPS) ---- */
+const haversine = (a, b) => { const R = 6371000, rad = x => x * Math.PI / 180, dl = rad(b.la - a.la), dn = rad(b.lo - a.lo);
+  const h = Math.sin(dl / 2) ** 2 + Math.cos(rad(a.la)) * Math.cos(rad(b.la)) * Math.sin(dn / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(h)); };
+const getRec = (S, night, g) => (S.reg[night] && S.reg[night][g]) || null;
+/* st: none | legacy (registro anterior al GPS) | noloc | noref | ok | far */
+function locStatus(S, night, g, k) {
+  const r = getRec(S, night, g); if (!r || !r[k]) return { st: 'none' };
+  const man = !!r[k + 'M'], L = r[k + 'L'];
+  if (L === undefined) return { st: 'legacy', manual: man };
+  if (!L || L.e) return { st: 'noloc', manual: man, err: L && L.e };
+  const ref = S.geo.refs[g]; if (!ref) return { st: 'noref', manual: man, L };
+  const d = Math.round(haversine(L, ref)), tol = S.geo.radius + Math.min(L.ac || 0, S.geo.radius);
+  return { st: d > tol ? 'far' : 'ok', d, manual: man, L, ac: L.ac };
+}
+function routeCheck(S, night) {
+  const r = { ok: 0, far: 0, noloc: 0, noref: 0, manual: 0, total: 0, ordOk: 0, ordTot: 0, gps: false }, st = { on: [], off: [] };
+  S.route.forEach((g, i) => ['on', 'off'].forEach(k => {
+    const ls = locStatus(S, night, g, k); if (ls.st === 'none') return;
+    r.total++; if (ls.st !== 'legacy') r.gps = true; if (ls.manual) r.manual++;
+    if (ls.st === 'ok') r.ok++; else if (ls.st === 'far') r.far++; else if (ls.st === 'noloc') r.noloc++; else if (ls.st === 'noref') r.noref++;
+    const L = getRec(S, night, g)[k + 'L']; if (L && L.t && !ls.manual) st[k].push({ t: L.t, pos: i + 1 });
+  }));
+  ['on', 'off'].forEach(k => { const a = st[k].sort((x, y) => x.t - y.t); for (let i = 1; i < a.length; i++) { r.ordTot++; if (a[i].pos > a[i - 1].pos) r.ordOk++; } });
+  return r;
+}
+
+/* ===== XLSX ===== */
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+function colName(i) { let s = '', n = i + 1; while (n > 0) { const m = (n - 1) % 26; s = String.fromCharCode(65 + m) + s; n = Math.floor((n - 1) / 26); } return s; }
+// estilos: índices de cellXfs
+const ST = { N: 0, H: 1, T: 2, B: 3, C: 4, TITLE: 5, TBAD: 6, TOK: 7, L: 8, D: 9, NUM: 10, CHK: 11, CBAD: 12, GEO: 13 };
+const STYLES = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">'
+ + '<numFmts count="3"><numFmt numFmtId="164" formatCode="hh:mm"/><numFmt numFmtId="165" formatCode="dd/mm/yyyy"/><numFmt numFmtId="166" formatCode="0.000000"/></numFmts>'
+ + '<fonts count="4"><font><sz val="10"/><name val="Arial"/></font><font><b/><sz val="10"/><color rgb="FFFFFFFF"/><name val="Arial"/></font><font><b/><sz val="10"/><name val="Arial"/></font><font><b/><sz val="14"/><color rgb="FFFFFFFF"/><name val="Arial"/></font></fonts>'
+ + '<fills count="5"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill>'
+ + '<fill><patternFill patternType="solid"><fgColor rgb="FF1F3864"/><bgColor indexed="64"/></patternFill></fill>'
+ + '<fill><patternFill patternType="solid"><fgColor rgb="FFFFC7CE"/><bgColor indexed="64"/></patternFill></fill>'
+ + '<fill><patternFill patternType="solid"><fgColor rgb="FFC6EFCE"/><bgColor indexed="64"/></patternFill></fill></fills>'
+ + '<borders count="2"><border><left/><right/><top/><bottom/><diagonal/></border><border><left style="thin"><color rgb="FFBFBFBF"/></left><right style="thin"><color rgb="FFBFBFBF"/></right><top style="thin"><color rgb="FFBFBFBF"/></top><bottom style="thin"><color rgb="FFBFBFBF"/></bottom><diagonal/></border></borders>'
+ + '<cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs>'
+ + '<cellXfs count="14">'
+ + '<xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/>'
+ + '<xf numFmtId="0" fontId="1" fillId="2" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" wrapText="1"/></xf>'
+ + '<xf numFmtId="164" fontId="0" fillId="0" borderId="1" xfId="0" applyNumberFormat="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center"/></xf>'
+ + '<xf numFmtId="0" fontId="2" fillId="0" borderId="0" xfId="0" applyFont="1"/>'
+ + '<xf numFmtId="0" fontId="0" fillId="0" borderId="1" xfId="0" applyBorder="1" applyAlignment="1"><alignment horizontal="center"/></xf>'
+ + '<xf numFmtId="0" fontId="3" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1" applyAlignment="1"><alignment horizontal="left" vertical="center"/></xf>'
+ + '<xf numFmtId="164" fontId="0" fillId="3" borderId="1" xfId="0" applyNumberFormat="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center"/></xf>'
+ + '<xf numFmtId="164" fontId="0" fillId="4" borderId="1" xfId="0" applyNumberFormat="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center"/></xf>'
+ + '<xf numFmtId="0" fontId="0" fillId="0" borderId="1" xfId="0" applyBorder="1" applyAlignment="1"><alignment horizontal="left"/></xf>'
+ + '<xf numFmtId="165" fontId="0" fillId="0" borderId="1" xfId="0" applyNumberFormat="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center"/></xf>'
+ + '<xf numFmtId="0" fontId="0" fillId="0" borderId="1" xfId="0" applyBorder="1" applyAlignment="1"><alignment horizontal="center"/></xf>'
+ + '<xf numFmtId="0" fontId="2" fillId="4" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center"/></xf>'
+ + '<xf numFmtId="0" fontId="0" fillId="3" borderId="1" xfId="0" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center"/></xf>'
+ + '<xf numFmtId="166" fontId="0" fillId="0" borderId="1" xfId="0" applyNumberFormat="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center"/></xf>'
+ + '</cellXfs><cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>';
+
+function sheetXml(sh) {
+  let x = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">';
+  x += '<sheetViews><sheetView workbookViewId="0" showGridLines="0">';
+  if (sh.freeze) {
+    const [fc, fr] = sh.freeze, tl = colName(fc) + (fr + 1);
+    const pane = fc && fr ? 'bottomRight' : fr ? 'bottomLeft' : 'topRight';
+    x += `<pane${fc ? ` xSplit="${fc}"` : ''}${fr ? ` ySplit="${fr}"` : ''} topLeftCell="${tl}" activePane="${pane}" state="frozen"/>`;
+  }
+  x += '</sheetView></sheetViews><sheetFormatPr defaultRowHeight="15"/>';
+  if (sh.widths) x += '<cols>' + sh.widths.map((w, i) => `<col min="${i + 1}" max="${i + 1}" width="${w}" customWidth="1"/>`).join('') + '</cols>';
+  x += '<sheetData>';
+  sh.rows.forEach((row, r) => {
+    const ht = sh.heights && sh.heights[r];
+    x += `<row r="${r + 1}"${ht ? ` ht="${ht}" customHeight="1"` : ''}>`;
+    row.forEach((c, i) => {
+      if (c == null) return;
+      if (typeof c !== 'object') c = { v: c };
+      const ref = colName(i) + (r + 1), s = c.s != null ? ` s="${c.s}"` : '';
+      if (c.f) x += `<c r="${ref}"${s} t="str"><f>${esc(c.f)}</f><v>${esc(c.v || '')}</v></c>`;
+      else if (c.v == null || c.v === '') x += `<c r="${ref}"${s}/>`;
+      else if (typeof c.v === 'number') x += `<c r="${ref}"${s}><v>${c.v}</v></c>`;
+      else x += `<c r="${ref}"${s} t="inlineStr"><is><t xml:space="preserve">${esc(c.v)}</t></is></c>`;
+    });
+    x += '</row>';
+  });
+  x += '</sheetData>';
+  if (sh.merges && sh.merges.length) x += `<mergeCells count="${sh.merges.length}">` + sh.merges.map(m => `<mergeCell ref="${m}"/>`).join('') + '</mergeCells>';
+  x += '<pageMargins left="0.5" right="0.5" top="0.6" bottom="0.6" header="0.3" footer="0.3"/><pageSetup orientation="landscape" fitToHeight="0"/></worksheet>';
+  return x;
+}
+/* ZIP "store" (sin compresión) */
+const CRC = (() => { const t = new Uint32Array(256); for (let n = 0; n < 256; n++) { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; } return t; })();
+const crc32 = b => { let c = 0xFFFFFFFF; for (let i = 0; i < b.length; i++) c = CRC[(c ^ b[i]) & 255] ^ (c >>> 8); return (c ^ 0xFFFFFFFF) >>> 0; };
+function zip(files) {
+  const enc = new TextEncoder(), parts = [], cen = []; let off = 0;
+  const now = new Date(), time = (now.getHours() << 11) | (now.getMinutes() << 5) | (now.getSeconds() >> 1), date = ((now.getFullYear() - 1980) << 9) | ((now.getMonth() + 1) << 5) | now.getDate();
+  for (const f of files) {
+    const nm = enc.encode(f.name), data = enc.encode(f.data), crc = crc32(data);
+    const lh = new DataView(new ArrayBuffer(30));
+    lh.setUint32(0, 0x04034b50, true); lh.setUint16(4, 20, true); lh.setUint16(6, 0x0800, true); lh.setUint16(8, 0, true);
+    lh.setUint16(10, time, true); lh.setUint16(12, date, true); lh.setUint32(14, crc, true); lh.setUint32(18, data.length, true); lh.setUint32(22, data.length, true);
+    lh.setUint16(26, nm.length, true); lh.setUint16(28, 0, true);
+    parts.push(new Uint8Array(lh.buffer), nm, data);
+    const ch = new DataView(new ArrayBuffer(46));
+    ch.setUint32(0, 0x02014b50, true); ch.setUint16(4, 20, true); ch.setUint16(6, 20, true); ch.setUint16(8, 0x0800, true); ch.setUint16(10, 0, true);
+    ch.setUint16(12, time, true); ch.setUint16(14, date, true); ch.setUint32(16, crc, true); ch.setUint32(20, data.length, true); ch.setUint32(24, data.length, true);
+    ch.setUint16(28, nm.length, true); ch.setUint32(42, off, true);
+    cen.push(new Uint8Array(ch.buffer), nm);
+    off += 30 + nm.length + data.length;
+  }
+  const cs = cen.reduce((a, b) => a + b.length, 0), eo = new DataView(new ArrayBuffer(22));
+  eo.setUint32(0, 0x06054b50, true); eo.setUint16(8, files.length, true); eo.setUint16(10, files.length, true); eo.setUint32(12, cs, true); eo.setUint32(16, off, true);
+  const all = [...parts, ...cen, new Uint8Array(eo.buffer)], out = new Uint8Array(all.reduce((a, b) => a + b.length, 0));
+  let p = 0; for (const b of all) { out.set(b, p); p += b.length; }
+  return out;
+}
+function xlsxBytes(sheets) {
+  const f = [];
+  f.push({ name: '[Content_Types].xml', data: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/>' + sheets.map((s, i) => `<Override PartName="/xl/worksheets/sheet${i + 1}.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>`).join('') + '</Types>' });
+  f.push({ name: '_rels/.rels', data: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>' });
+  f.push({ name: 'xl/workbook.xml', data: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets>' + sheets.map((s, i) => `<sheet name="${esc(s.name)}" sheetId="${i + 1}" r:id="rId${i + 1}"/>`).join('') + '</sheets></workbook>' });
+  f.push({ name: 'xl/_rels/workbook.xml.rels', data: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">' + sheets.map((s, i) => `<Relationship Id="rId${i + 1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet${i + 1}.xml"/>`).join('') + `<Relationship Id="rId${sheets.length + 1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>` });
+  f.push({ name: 'xl/styles.xml', data: STYLES });
+  sheets.forEach((s, i) => f.push({ name: `xl/worksheets/sheet${i + 1}.xml`, data: sheetXml(s) }));
+  return zip(f);
+}
+
+/* ---- Libro de Excel con la información de la app ---- */
+function buildWorkbook(S, night, weekMon) {
+  const sc = schedule(S), ev = events(S), tol = +S.tol || 0;
+  const T = m => (m == null ? { v: '', s: ST.C } : { v: m / 1440, s: ST.T });
+  const H = (t) => ({ v: t, s: ST.H });
+  const title = (t, n) => { const r = [{ v: t, s: ST.TITLE }]; for (let i = 1; i < n; i++) r.push({ v: '', s: ST.TITLE }); return r; };
+  const byNum = []; for (let g = 11; g <= 34; g++) byNum.push(g);
+  const sheets = [];
+  const LTXT = { ok: 'EN EL LUGAR', far: 'LEJOS DEL GALPÓN', noloc: 'SIN UBICACIÓN', noref: 'SIN REFERENCIA' };
+  const locCells = ls => {   // Ubicación, Distancia, Precisión, Latitud, Longitud, Manual, Mapa
+    const st = ls.st, L = ls.L, has = L && L.la != null;
+    return [{ v: LTXT[st] || '', s: st === 'ok' ? ST.CHK : (st === 'far' || st === 'noloc') ? ST.CBAD : ST.C },
+      { v: ls.d != null ? ls.d : '', s: st === 'far' ? ST.CBAD : ST.NUM }, { v: has && L.ac != null ? L.ac : '', s: ST.NUM },
+      { v: has ? L.la : '', s: ST.GEO }, { v: has ? L.lo : '', s: ST.GEO }, { v: ls.manual ? 'SÍ' : '', s: ls.manual ? ST.CBAD : ST.C },
+      has ? { f: 'HYPERLINK("https://maps.google.com/?q=' + L.la + ',' + L.lo + '","Ver mapa")', v: 'Ver mapa', s: ST.C } : { v: '', s: ST.C }];
+  };
+  const rc = routeCheck(S, night);
+
+  /* 1. Orden de recorrido de la noche elegida */
+  { const rows = [title('ORDEN DE RECORRIDO – ' + dmy(night) + ' (noche que empieza ese día)', 19), [], [], [H('N°'), H('Hora prog.'), H('Acción'), H('Galpón'), H('Grupo'), H('Hecho'), H('Hora real'), H('Desvío (min)'), H('Movimiento'), H('Ubicación'), H('Distancia al galpón (m)'), H('Precisión GPS (m)'), H('Latitud'), H('Longitud'), H('Registro manual'), H('Mapa'), H('Registrado por'), H('Corregido por'), H('Observaciones')]];
+    rows[1] = [{ v: 'Inicio del gráfico: ' + S.inicio + '   |   Tolerancia: ' + tol + ' min   |   Responsable: ' + (S.resp || '') + (rc.gps ? '   |   GPS: ' + rc.ok + ' en el lugar, ' + rc.far + ' lejos, ' + rc.noloc + ' sin ubicación, ' + rc.noref + ' sin referencia, ' + rc.manual + ' manuales; orden de ruta ' + rc.ordOk + '/' + rc.ordTot : ''), s: ST.B }];
+    ev.forEach(e => {
+      const real = toMin(getReg(S, night, e.g, e.k)), d = dev(real, e.min), bad = d != null && Math.abs(d) > tol, mv = moveText(S, e.g);
+      rows.push([{ v: e.n, s: ST.NUM }, T(e.min), { v: e.k === 'on' ? 'PRENDER' : 'APAGAR', s: ST.C }, { v: e.g, s: ST.NUM }, { v: S.sheds[e.g].g, s: ST.C },
+        real != null ? { v: '✔', s: ST.CHK } : { v: '', s: ST.C }, real != null ? { v: real / 1440, s: bad ? ST.TBAD : ST.TOK } : { v: '', s: ST.C },
+        d != null ? { v: d, s: bad ? ST.CBAD : ST.NUM } : { v: '', s: ST.C }, { v: mv.a + ' ' + mv.t, s: ST.L }, ...locCells(locStatus(S, night, e.g, e.k)), { v: (getRec(S, night, e.g) || {})[e.k + 'U'] || '', s: ST.L }, { v: (getRec(S, night, e.g) || {})[e.k + 'C'] || '', s: ST.C }, { v: '', s: ST.L }]);
+    });
+    sheets.push({ name: 'Orden de recorrido', rows, widths: [6, 11, 11, 9, 8, 8, 11, 12, 22, 20, 14, 12, 12, 12, 11, 11, 20, 14, 28], heights: [24, , , 42], merges: ['A1:S1'], freeze: [0, 4] }); }
+
+  /* 2. Registro semanal */
+  { const rows = [], merges = ['A1:S1', 'A5:A6', 'B5:B6', 'C5:C6', 'D5:D6', 'S5:S6'];
+    rows.push(title('REGISTRO SEMANAL – ENCENDIDO Y APAGADO DE LUCES', 19));
+    rows.push([]);
+    rows.push([{ v: 'Semana del (lunes):', s: ST.B }, { v: serial(weekMon), s: ST.D }, null, { v: 'Responsable:', s: ST.B }, { v: S.resp || '', s: ST.B }, null, null, { v: 'Tolerancia (min):', s: ST.B }, null, { v: tol, s: ST.NUM }]);
+    rows.push([]);
+    const h1 = [H('Galpón'), H('Grupo'), H('Prender\n(prog.)'), H('Apagar\n(prog.)')], h2 = [H(''), H(''), H(''), H('')];
+    for (let d = 0; d < 7; d++) { const dt = addDays(weekMon, d); h1.push(H(DIAS[d] + ' ' + dm(dt)), H('')); h2.push(H('Prendió'), H('Apagó')); merges.push(colName(4 + d * 2) + '5:' + colName(5 + d * 2) + '5'); }
+    h1.push(H('Noches\ncompletas')); h2.push(H(''));
+    rows.push(h1, h2);
+    const tot = Array(14).fill(0);
+    byNum.forEach(g => {
+      const r = [{ v: g, s: ST.NUM }, { v: S.sheds[g].g, s: ST.C }, T(sc[g].on), T(sc[g].off)]; let full = 0;
+      for (let d = 0; d < 7; d++) {
+        const dt = addDays(weekMon, d), a = toMin(getReg(S, dt, g, 'on')), b = toMin(getReg(S, dt, g, 'off'));
+        const cell = (v, p) => { if (v == null) return { v: '', s: ST.C }; const dd = dev(v, p), bad = dd != null && Math.abs(dd) > tol; return { v: v / 1440, s: bad ? ST.TBAD : ST.T }; };
+        r.push(cell(a, sc[g].on), cell(b, sc[g].off)); if (a != null) tot[d * 2]++; if (b != null) tot[d * 2 + 1]++; if (a != null && b != null) full++;
+      }
+      r.push({ v: full + ' / 7', s: ST.C }); rows.push(r);
+    });
+    rows.push([{ v: 'Total galpones registrados:', s: ST.B }, null, null, null, ...tot.map(n => ({ v: n + ' / 24', s: ST.C }))]);
+    const w = [9, 8, 10, 10]; for (let i = 0; i < 14; i++) w.push(9); w.push(11);
+    sheets.push({ name: 'Registro semanal', rows, widths: w, heights: [24, , , , 30], merges, freeze: [4, 6] }); }
+
+  /* 3. Cronograma */
+  { const rows = [title('CRONOGRAMA DE LUCES – GALPONES 11 AL 34', 8), [], [H('Galpón'), H('Grupo'), H('Lote'), H('Prende'), H('Apaga'), H('Horas'), H('Prende propio'), H('Apaga propio')]];
+    rows[1] = [{ v: 'Min. entre galpones: ' + ['A', 'B', 'C', 'D'].map(k => k + '=' + (S.groups[k].gap || 0)).join('  '), s: ST.B }];
+    byNum.forEach(g => { const s = sc[g], sh = S.sheds[g], hrs = (s.on != null && s.off != null) ? Math.round(mod(s.off - s.on, 1440) / 6) / 10 : '';
+      rows.push([{ v: g, s: ST.NUM }, { v: sh.g, s: ST.C }, { v: sh.lote || '', s: ST.C }, T(s.on), T(s.off), { v: hrs, s: ST.NUM }, sh.on ? T(toMin(sh.on)) : { v: '', s: ST.C }, sh.off ? T(toMin(sh.off)) : { v: '', s: ST.C }]); });
+    sheets.push({ name: 'Cronograma', rows, widths: [9, 8, 10, 10, 10, 9, 14, 14], heights: [24], merges: ['A1:H1'], freeze: [0, 3] }); }
+
+  /* 4. Ruta */
+  { const rows = [title('RUTA SEGÚN CROQUIS – sale de la torre (junto a G11) y vuelve a ella', 5), [], [H('Pos.'), H('Galpón'), H('Fila'), H('Col.'), H('Movimiento')]];
+    S.route.forEach((g, i) => { const mv = moveText(S, g); rows.push([{ v: i + 1, s: ST.NUM }, { v: g, s: ST.NUM }, { v: fila(g), s: ST.NUM }, { v: col(g), s: ST.NUM }, { v: i === 0 ? 'Salir de la torre → entrar a G' + g : mv.a + ' ' + mv.t + ' a G' + g, s: ST.L }]); });
+    rows.push([{ v: 'Fin', s: ST.C }, null, null, null, { v: '→ Volver a la torre pasando por G11 (desde G' + S.route[23] + ')', s: ST.L }]);
+    sheets.push({ name: 'Ruta', rows, widths: [7, 9, 7, 7, 46], heights: [24], merges: ['A1:E1'], freeze: [0, 3] }); }
+
+  /* 5. Registro detallado (todas las noches) */
+  { const rows = [[H('Noche'), H('Galpón'), H('Grupo'), H('Acción'), H('Hora prog.'), H('Hora real'), H('Desvío (min)'), H('Fuera de tolerancia'), H('Ubicación'), H('Distancia al galpón (m)'), H('Precisión GPS (m)'), H('Latitud'), H('Longitud'), H('Registro manual'), H('Mapa'), H('Registrado por'), H('Corregido por')]];
+    Object.keys(S.reg).sort().forEach(dt => byNum.forEach(g => ['on', 'off'].forEach(k => {
+      const real = toMin(getReg(S, dt, g, k)); if (real == null) return;
+      const p = sc[g][k], d = dev(real, p), bad = d != null && Math.abs(d) > tol;
+      rows.push([{ v: serial(dt), s: ST.D }, { v: g, s: ST.NUM }, { v: S.sheds[g].g, s: ST.C }, { v: k === 'on' ? 'PRENDER' : 'APAGAR', s: ST.C }, T(p), { v: real / 1440, s: bad ? ST.TBAD : ST.T }, d != null ? { v: d, s: bad ? ST.CBAD : ST.NUM } : { v: '', s: ST.C }, { v: bad ? 'SÍ' : '', s: bad ? ST.CBAD : ST.C }, ...locCells(locStatus(S, dt, g, k)), { v: (getRec(S, dt, g) || {})[k + 'U'] || '', s: ST.L }, { v: (getRec(S, dt, g) || {})[k + 'C'] || '', s: ST.C }]);
+    })));
+    sheets.push({ name: 'Registro detallado', rows, widths: [12, 9, 8, 11, 11, 11, 12, 18, 20, 14, 12, 12, 12, 11, 11, 20, 14], heights: [42], freeze: [0, 1] });
+  }
+
+  /* 6. Turnos: quién inició la labor */
+  { const rows = [title('TURNOS – QUIÉN INICIÓ LA LABOR', 6), [], [H('N°'), H('Usuario'), H('Fecha'), H('Hora de inicio'), H('Noche'), H('Registros de ese usuario en la noche')]];
+    (S.turnos || []).forEach((t, i) => { const d = new Date(t.t), dt = ds(d); let n = 0;
+      Object.values(S.reg[t.n] || {}).forEach(r => ['on', 'off'].forEach(k => { if (r[k] && r[k + 'U'] === t.u) n++; }));
+      rows.push([{ v: i + 1, s: ST.NUM }, { v: t.u, s: ST.L }, { v: serial(dt), s: ST.D }, { v: (d.getHours() * 60 + d.getMinutes()) / 1440, s: ST.T }, { v: serial(t.n), s: ST.D }, { v: n, s: ST.NUM }]); });
+    sheets.push({ name: 'Turnos', rows, widths: [6, 24, 12, 14, 12, 26], heights: [24, , 42], merges: ['A1:F1'], freeze: [0, 3] }); }
+
+  /* 7. Ubicación de referencia de cada galpón */
+  { const rows = [title('UBICACIÓN DE REFERENCIA DE LOS GALPONES (GPS)', 6), [{ v: 'Radio permitido: ' + S.geo.radius + ' m   |   Exigir ubicación para registrar: ' + (S.geo.req ? 'Sí' : 'No'), s: ST.B }], [H('Galpón'), H('Grupo'), H('Latitud'), H('Longitud'), H('Estado'), H('Mapa')]];
+    byNum.forEach(g => { const f = S.geo.refs[g];
+      rows.push([{ v: g, s: ST.NUM }, { v: S.sheds[g].g, s: ST.C }, { v: f ? f.la : '', s: ST.GEO }, { v: f ? f.lo : '', s: ST.GEO }, { v: f ? 'Calibrado' : 'Sin calibrar', s: f ? ST.CHK : ST.CBAD },
+        f ? { f: 'HYPERLINK("https://maps.google.com/?q=' + f.la + ',' + f.lo + '","Ver mapa")', v: 'Ver mapa', s: ST.C } : { v: '', s: ST.C }]); });
+    sheets.push({ name: 'Ubicación galpones', rows, widths: [9, 8, 13, 13, 14, 11], heights: [24], merges: ['A1:F1'], freeze: [0, 3] }); }
+  return xlsxBytes(sheets);
+}
+
+
+/* ===== SHA-256 (JS puro, funciona también fuera de https) ===== */
+const K256=new Uint32Array([0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2]);
+function sha256hex(str){
+  const m=new TextEncoder().encode(str),l=m.length,n=((l+9+63)>>6)<<6,b=new Uint8Array(n);b.set(m);b[l]=0x80;
+  const dv=new DataView(b.buffer);dv.setUint32(n-4,(l*8)>>>0);dv.setUint32(n-8,Math.floor(l*8/4294967296));
+  const h=new Uint32Array([0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19]),w=new Uint32Array(64);
+  for(let o=0;o<n;o+=64){
+    for(let i=0;i<16;i++)w[i]=dv.getUint32(o+i*4);
+    for(let i=16;i<64;i++){const a=w[i-15],c=w[i-2];const s0=((a>>>7)|(a<<25))^((a>>>18)|(a<<14))^(a>>>3),s1=((c>>>17)|(c<<15))^((c>>>19)|(c<<13))^(c>>>10);w[i]=(w[i-16]+s0+w[i-7]+s1)>>>0;}
+    let a=h[0],b2=h[1],c2=h[2],d=h[3],e=h[4],f=h[5],g=h[6],hh=h[7];
+    for(let i=0;i<64;i++){
+      const S1=((e>>>6)|(e<<26))^((e>>>11)|(e<<21))^((e>>>25)|(e<<7)),ch=(e&f)^(~e&g),t1=(hh+S1+ch+K256[i]+w[i])>>>0;
+      const S0=((a>>>2)|(a<<30))^((a>>>13)|(a<<19))^((a>>>22)|(a<<10)),mj=(a&b2)^(a&c2)^(b2&c2),t2=(S0+mj)>>>0;
+      hh=g;g=f;f=e;e=(d+t1)>>>0;d=c2;c2=b2;b2=a;a=(t1+t2)>>>0;
+    }
+    h[0]=(h[0]+a)>>>0;h[1]=(h[1]+b2)>>>0;h[2]=(h[2]+c2)>>>0;h[3]=(h[3]+d)>>>0;h[4]=(h[4]+e)>>>0;h[5]=(h[5]+f)>>>0;h[6]=(h[6]+g)>>>0;h[7]=(h[7]+hh)>>>0;
+  }
+  return Array.from(h).map(x=>x.toString(16).padStart(8,'0')).join('');
+}
+function hashPw(user,pw,salt){let h=sha256hex(salt+':'+String(user).trim().toLowerCase()+':'+pw);for(let i=0;i<4000;i++)h=sha256hex(h+salt);return h;}
+
+const Core = { sha256hex, hashPw, toMin, fmt, mod, OPT_ROUTE, fila, col, galAt, arrowTo, WORD, ds, pd, addDays, mondayOf, serial, DIAS, dm, dmy, defaultState, mergeState, schedule, events, moveText, nextArrow, nightOf, nowHM, dev, getReg, setReg, haversine, locStatus, routeCheck, buildWorkbook, xlsxBytes };
+if (typeof module !== 'undefined' && module.exports) module.exports = Core; else root.Core = Core;
+})(typeof window !== 'undefined' ? window : globalThis);
+</script>
+<script>/* ===== UI ===== */
+(function () {
+'use strict';
+const C = window.Core, $ = s => document.querySelector(s);
+const KEY = 'luces_galpones_v1';
+let S; try { S = C.mergeState(JSON.parse(localStorage.getItem(KEY))); } catch (e) { S = C.defaultState(); }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+let tab = 'hoy', night = C.nightOf(new Date(), S), weekMon = C.mondayOf(night), filter = 'all', installEvt = null;
+const todayNight = () => C.nightOf(new Date(), S);
+const pad2 = n => String(n).padStart(2, '0');
+const kname = k => k === 'on' ? 'PRENDER' : 'APAGAR';
+const loteColor = g => { const l = S.lotes.find(x => x.c === S.sheds[g].lote); return l ? l.color : '#ffffff'; };
+
+function toast(t) { const d = document.createElement('div'); d.className = 'toast'; d.textContent = t; document.body.appendChild(d); setTimeout(() => d.remove(), 2200); }
+function modal(html, sticky) {
+  const ov = document.createElement('div'); ov.className = 'ov'; ov.innerHTML = '<div class="sheet">' + html + '</div>';
+  if (!sticky) ov.addEventListener('click', e => { if (e.target === ov) ov.remove(); });
+  document.body.appendChild(ov); return ov;
+}
+const nightLabel = n => C.DIAS[(C.pd(n).getDay() + 6) % 7] + ' ' + C.dmy(n);
+
+
+
+/* ---------- usuario que inicia la labor ---------- */
+const UKEY = 'lg_user', USER_MS = 12 * 3600 * 1000;
+let user = '';
+try { const o = JSON.parse(sessionStorage.getItem(UKEY)); if (o && o.u && Date.now() - o.t < USER_MS) user = o.u; } catch (e) {}
+const cleanName = s => { s = String(s || '').replace(/\s+/g, ' ').trim().slice(0, 40); return s === s.toLowerCase() ? s.replace(/(^|\s)(\S)/g, (m, a, b) => a + b.toUpperCase()) : s; };
+function recentNames() { const seen = new Set(), out = []; for (let i = S.turnos.length - 1; i >= 0 && out.length < 6; i--) { const n = S.turnos[i].u, key = n.toLowerCase(); if (!seen.has(key)) { seen.add(key); out.push(n); } } return out; }
+function startTurn(name) {
+  user = name; try { sessionStorage.setItem(UKEY, JSON.stringify({ u: name, t: Date.now() })); } catch (e) {}
+  S.turnos.push({ u: name, t: Date.now(), n: C.nightOf(new Date(), S) }); if (S.turnos.length > 500) S.turnos = S.turnos.slice(-500); save();
+}
+function askUser(canCancel) {
+  if (document.getElementById('uov')) return;
+  const rn = recentNames();
+  const ov = modal(`<h2>👤 ¿Quién inicia la labor?</h2><div class="note" style="margin-bottom:10px">Escribe tu nombre. Quedará guardado junto a cada hora que registres.</div>
+    <input type="text" id="un" autocomplete="off" autocapitalize="words" placeholder="Nombre y apellido" maxlength="40">
+    ${rn.length ? '<div class="note" style="margin:10px 0 4px">Recientes:</div><div class="chips" style="flex-wrap:wrap">' + rn.map(n => `<button class="chip" data-nm="${esc(n)}">${esc(n)}</button>`).join('') + '</div>' : ''}
+    <div id="um" class="note" style="color:var(--bad);min-height:18px;margin-top:6px"></div>
+    <button class="btn ok full" id="ugo">Iniciar</button>${canCancel ? '<button class="btn alt full" style="margin-top:8px" id="ucn">Cancelar</button>' : ''}`, !canCancel);
+  ov.id = 'uov';
+  if (canCancel) ov.addEventListener('click', e => { if (e.target === ov) ov.remove(); });
+  const inp = ov.querySelector('#un'); inp.value = canCancel ? '' : ''; 
+  ov.querySelectorAll('[data-nm]').forEach(b => b.onclick = () => { inp.value = b.dataset.nm; });
+  const go = () => { const n = cleanName(inp.value); if (n.length < 2) { ov.querySelector('#um').textContent = 'Escribe tu nombre (mínimo 2 letras).'; return; } startTurn(n); ov.remove(); toast('Bienvenido, ' + n); render(true); };
+  ov.querySelector('#ugo').onclick = go; inp.addEventListener('keydown', e => { if (e.key === 'Enter') go(); });
+  if (canCancel) ov.querySelector('#ucn').onclick = () => ov.remove();
+  setTimeout(() => inp.focus(), 60);
+}
+function userMenu() {
+  const ov = modal(`<h2>👤 ${esc(user)}</h2><div class="note" style="margin-bottom:12px">Usuario que está registrando ahora.</div><button class="btn full" id="u1">Cambiar de usuario</button><button class="btn alt full" style="margin-top:8px" id="u2">Cerrar</button>`);
+  ov.querySelector('#u2').onclick = () => ov.remove();
+  ov.querySelector('#u1').onclick = () => { ov.remove(); askUser(true); };
+}
+
+/* ---------- acceso de administrador ---------- */
+const AKEY='luces_galpones_admin', LKEY='luces_galpones_lock', IDLE_MS=10*60*1000;
+const ADMIN_DEFAULT={user:'kevin',salt:'gx26',hash:'efb39a349a957fcf660cfbcc83a2b219b3078c87ca781a34321063b5e42f6c76'};
+const getAdmin=()=>{try{const a=JSON.parse(localStorage.getItem(AKEY));if(a&&a.user&&a.salt&&a.hash)return a;}catch(e){}return ADMIN_DEFAULT;};
+let admin=false,lastAct=Date.now();
+try{if(sessionStorage.getItem('lg_admin')==='1'&&Date.now()-(+sessionStorage.getItem('lg_t')||0)<IDLE_MS)admin=true;}catch(e){}
+const setAdmin=v=>{admin=v;lastAct=Date.now();try{v?sessionStorage.setItem('lg_admin','1'):sessionStorage.removeItem('lg_admin');sessionStorage.setItem('lg_t',String(Date.now()));}catch(e){}};
+const touch=()=>{lastAct=Date.now();if(admin)try{sessionStorage.setItem('lg_t',String(lastAct));}catch(e){}};
+function lockInfo(){try{return JSON.parse(localStorage.getItem(LKEY))||{n:0,until:0};}catch(e){return{n:0,until:0};}}
+function tryLogin(user,pw){
+  const L=lockInfo(),now=Date.now();
+  if(L.until>now)return{ok:false,msg:'Demasiados intentos. Espera '+Math.ceil((L.until-now)/1000)+' s.'};
+  const a=getAdmin();
+  if(user.trim().toLowerCase()===a.user&&C.hashPw(a.user,pw,a.salt)===a.hash){try{localStorage.removeItem(LKEY);}catch(e){}setAdmin(true);return{ok:true};}
+  L.n=(L.n||0)+1;let msg='Usuario o contraseña incorrectos.';
+  if(L.n>=5){L.until=now+60000*Math.min(L.n-4,10);msg='Demasiados intentos. Espera '+Math.ceil((L.until-now)/1000)+' s.';}
+  try{localStorage.setItem(LKEY,JSON.stringify(L));}catch(e){}
+  return{ok:false,msg};
+}
+function denied(what){
+  const ov=modal(`<h2>🔒 Solo administrador</h2><div class="note" style="margin-bottom:12px">${what}</div><button class="btn full" id="dl">Ingresar como administrador</button><button class="btn alt full" style="margin-top:8px" id="dc">Cerrar</button>`);
+  ov.querySelector('#dc').onclick=()=>ov.remove();ov.querySelector('#dl').onclick=()=>{ov.remove();loginModal();};
+}
+function loginModal(){
+  const ov=modal(`<h2>🔒 Ingreso de administrador</h2><label class="f">Usuario</label><input type="text" id="lu" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false">
+    <label class="f">Contraseña</label><input type="password" id="lp" autocomplete="current-password">
+    <div id="lm" class="note" style="color:var(--bad);min-height:18px;margin-top:6px"></div>
+    <div class="row2" style="margin-top:8px"><button class="btn ok" id="lgo">Ingresar</button><button class="btn alt" id="lcan">Cancelar</button></div>`);
+  const go=()=>{const r=tryLogin(ov.querySelector('#lu').value,ov.querySelector('#lp').value);
+    if(r.ok){ov.remove();toast('Sesión de administrador iniciada');render(true);}else{ov.querySelector('#lm').textContent=r.msg;ov.querySelector('#lp').value='';}};
+  ov.querySelector('#lgo').onclick=go;ov.querySelector('#lcan').onclick=()=>ov.remove();
+  ov.addEventListener('keydown',e=>{if(e.key==='Enter')go();});
+  setTimeout(()=>ov.querySelector('#lu').focus(),50);
+}
+function adminMenu(){
+  const ov=modal(`<h2>🔓 Administrador: ${esc(getAdmin().user)}</h2><div class="note" style="margin-bottom:12px">La sesión se cierra sola tras 10 minutos sin usar la app.</div>
+    <button class="btn alt full" id="am1">Cambiar contraseña</button><button class="btn red full" style="margin-top:8px" id="am2">Cerrar sesión</button><button class="btn alt full" style="margin-top:8px" id="am3">Cerrar</button>`);
+  ov.querySelector('#am3').onclick=()=>ov.remove();
+  ov.querySelector('#am2').onclick=()=>{setAdmin(false);ov.remove();toast('Sesión cerrada');if(tab==='aju')tab='hoy';render();};
+  ov.querySelector('#am1').onclick=()=>{ov.remove();pwModal();};
+}
+function pwModal(){
+  const ov=modal(`<h2>Cambiar contraseña</h2><label class="f">Contraseña actual</label><input type="password" id="p0" autocomplete="current-password">
+    <label class="f">Nueva contraseña (mínimo 6 caracteres)</label><input type="password" id="p1" autocomplete="new-password">
+    <label class="f">Repetir nueva contraseña</label><input type="password" id="p2" autocomplete="new-password">
+    <div id="pm" class="note" style="color:var(--bad);min-height:18px;margin-top:6px"></div>
+    <div class="row2" style="margin-top:8px"><button class="btn ok" id="psv">Guardar</button><button class="btn alt" id="pcn">Cancelar</button></div>`);
+  ov.querySelector('#pcn').onclick=()=>ov.remove();
+  ov.querySelector('#psv').onclick=()=>{
+    const a=getAdmin(),p0=ov.querySelector('#p0').value,p1=ov.querySelector('#p1').value,p2=ov.querySelector('#p2').value,m=ov.querySelector('#pm');
+    if(C.hashPw(a.user,p0,a.salt)!==a.hash){m.textContent='La contraseña actual no es correcta.';return;}
+    if(p1.length<6){m.textContent='La nueva contraseña debe tener al menos 6 caracteres.';return;}
+    if(p1!==p2){m.textContent='Las contraseñas nuevas no coinciden.';return;}
+    const salt=Math.random().toString(36).slice(2,10);
+    try{localStorage.setItem(AKEY,JSON.stringify({user:a.user,salt,hash:C.hashPw(a.user,p1,salt)}));}catch(e){m.textContent='No se pudo guardar.';return;}
+    ov.remove();toast('Contraseña cambiada');
+  };
+}
+
+/* ---------- Excel ---------- */
+const XLSX_T = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+function xlsxFile() { return new File([C.buildWorkbook(S, night, weekMon)], 'Luces_Galpones_' + night + '.xlsx', { type: XLSX_T }); }
+function saveFile(file) {
+  const url = URL.createObjectURL(file), a = document.createElement('a');
+  a.href = url; a.download = file.name; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 4000);
+}
+function downloadXlsx() { saveFile(xlsxFile()); toast('Excel descargado: ' + 'Luces_Galpones_' + night + '.xlsx'); }
+async function shareXlsx() {
+  const f = xlsxFile();
+  try { if (navigator.canShare && navigator.canShare({ files: [f] })) { await navigator.share({ files: [f], title: 'Luces galpones' }); return; } } catch (e) { if (e.name === 'AbortError') return; }
+  saveFile(f); toast('Tu navegador no permite compartir; se descargó el archivo.');
+}
+
+/* ---------- registro de horas ---------- */
+function setTime(g, k, date, v, loc, man, usr, corr) { C.setReg(S, date, g, k, v, loc, man, usr, corr); save(); }
+/* ---------- ubicación (GPS) ---------- */
+function getFix() {
+  return new Promise(res => {
+    if (!navigator.geolocation) return res({ e: 'sin-gps' });
+    navigator.geolocation.getCurrentPosition(
+      p => res({ la: +p.coords.latitude.toFixed(6), lo: +p.coords.longitude.toFixed(6), ac: Math.round(p.coords.accuracy) }),
+      er => res({ e: er.code === 1 ? 'denegado' : er.code === 3 ? 'tiempo' : 'no-disponible' }),
+      { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 });
+  });
+}
+const GERR = { 'denegado': 'Permiso de ubicación denegado', 'tiempo': 'No se pudo obtener la ubicación a tiempo', 'no-disponible': 'Ubicación no disponible (activa el GPS)', 'sin-gps': 'Este dispositivo/navegador no permite ubicación' };
+let busy = false;
+function busyOv(t) { const d = document.createElement('div'); d.className = 'ov'; d.style.alignItems = 'center'; d.style.justifyContent = 'center'; d.innerHTML = '<div class="sheet" style="width:auto;border-radius:16px;text-align:center;padding:22px 26px"><div style="font-size:34px">📍</div><b>' + t + '</b></div>'; document.body.appendChild(d); return d; }
+/* Registra la hora de ahora + ubicación. Devuelve true si se guardó. */
+async function registerNow(g, k, date) {
+  if (!user) { askUser(); return false; }
+  if (busy) return false; busy = true;
+  const hm = C.nowHM(), ts = Date.now(), ov = busyOv('Obteniendo ubicación…');
+  const fix = await getFix(); ov.remove(); busy = false;
+  if (fix.e && S.geo.req) { toast('No se registró: ' + (GERR[fix.e] || 'sin ubicación')); return false; }
+  setTime(g, k, date, hm, fix.e ? { e: fix.e, t: ts } : { la: fix.la, lo: fix.lo, ac: fix.ac, t: ts }, false, user);
+  const ls = C.locStatus(S, date, g, k);
+  toast('G' + g + ' ' + kname(k) + ' · ' + hm + (fix.e ? ' · ⚠ sin ubicación' : ls.st === 'far' ? ' · ⚠ lejos del galpón (' + ls.d + ' m)' : ls.st === 'ok' ? ' · 📍 ok' : ' · 📍 guardada'));
+  return true;
+}
+const locTag = ls => {
+  const m = ls.manual ? ' <span class="loc warn">✎ manual</span>' : '';
+  if (ls.st === 'ok') return '<span class="loc ok">📍 ' + ls.d + ' m</span>' + m;
+  if (ls.st === 'far') return '<span class="loc bad">📍 ' + ls.d + ' m ⚠</span>' + m;
+  if (ls.st === 'noref') return '<span class="loc ok">📍 ✓</span>' + m;
+  if (ls.st === 'noloc') return '<span class="loc bad">sin ubicación</span>' + m;
+  return m.trim();
+};
+const whoTag = (g, k, date) => { const r = S.reg[date] && S.reg[date][g]; if (!r || !r[k]) return ''; const w = r[k + 'U'], c = r[k + 'C'];
+  return (w ? '<br><span class="who">👤 ' + esc(w) + '</span>' : '') + (c ? ' <span class="who">✎ corr. ' + esc(c) + '</span>' : ''); };
+const mapLink = (g, k, date) => { const L = (C.getReg(S, date, g, k) && S.reg[date][g][k + 'L']); return (admin && L && L.la != null) ? ' · <a href="https://maps.google.com/?q=' + L.la + ',' + L.lo + '" target="_blank" rel="noopener">🗺️ mapa</a>' : ''; };
+function editTime(g, k, date) {
+  const sc = C.schedule(S)[g], prog = sc[k], cur = C.getReg(S, date, g, k);
+  if (cur && !admin) { denied('G' + g + ' ' + kname(k) + ' ya tiene la hora ' + cur + ' registrada. Solo el administrador puede corregirla o borrarla.'); return; }
+  const ov = modal(`<h2>G${g} · ${kname(k)}</h2><div class="note" style="margin-bottom:8px">Noche del ${nightLabel(date)} · programado ${C.fmt(prog) || '—'}</div>
+    <label class="f">Hora real</label><input type="time" id="tt" value="${cur || C.fmt(prog) || ''}">
+    <div class="row2" style="margin-top:12px"><button class="btn ok" id="tsave">Guardar</button><button class="btn alt" id="tnow">Ahora</button></div>
+    <div class="row2" style="margin-top:8px">${cur ? '<button class="btn red" id="tdel">Borrar</button>' : ''}<button class="btn alt" id="tcan">Cancelar</button></div>`);
+  ov.querySelector('#tsave').onclick = async () => {
+    if (C.getReg(S, date, g, k) && !admin) return; const v = ov.querySelector('#tt').value; if (!v) { toast('Escribe una hora'); return; }
+    if (cur) { setTime(g, k, date, v, undefined, true, undefined, getAdmin().user); ov.remove(); render(true); toast('Hora corregida (queda marcada como manual)'); return; }   // admin corrige: conserva la ubicación original
+    if (!user) { askUser(); return; }
+    if (busy) return; busy = true; const ts = Date.now(), o2 = busyOv('Obteniendo ubicación…'); const fix = await getFix(); o2.remove(); busy = false;
+    if (fix.e && S.geo.req) { toast('No se registró: ' + (GERR[fix.e] || 'sin ubicación')); return; }
+    setTime(g, k, date, v, fix.e ? { e: fix.e, t: ts } : { la: fix.la, lo: fix.lo, ac: fix.ac, t: ts }, true, user); ov.remove(); render(true); toast('Hora guardada (marcada como manual)');
+  };
+  ov.querySelector('#tnow').onclick = async () => { if (C.getReg(S, date, g, k) && !admin) return; if (cur) { setTime(g, k, date, C.nowHM(), undefined, true, undefined, getAdmin().user); ov.remove(); render(true); return; } ov.remove(); if (await registerNow(g, k, date)) render(true); };
+  if (cur) ov.querySelector('#tdel').onclick = () => { if (!admin) return; setTime(g, k, date, ''); ov.remove(); render(true); };
+  ov.querySelector('#tcan').onclick = () => ov.remove();
+}
+async function regNow(g, k) { if (C.getReg(S, night, g, k) && !admin) { denied('Ese registro ya existe. Solo el administrador puede modificarlo.'); return; } if (await registerNow(g, k, night)) render(true); }
+
+/* ---------- barra de noche ---------- */
+function nightBar() {
+  const t = todayNight();
+  return `<div class="bar"><button class="sq" data-act="nprev">◀</button>
+    <div class="d">${nightLabel(night)}<small>Noche que empieza ese día${night === t ? ' · HOY' : ''}</small></div>
+    <button class="sq" data-act="nnext">▶</button></div>${night !== t ? '<button class="chip" data-act="ntoday" style="margin-bottom:8px">Ir a la noche de hoy</button>' : ''}`;
+}
+const stat = (g, k) => { const r = C.getReg(S, night, g, k); if (!r) return null; const d = C.dev(C.toMin(r), C.schedule(S)[g][k]); return { r, d, bad: d != null && Math.abs(d) > S.tol, ls: C.locStatus(S, night, g, k) }; };
+
+/* ---------- verificación del recorrido (GPS) ---------- */
+function verifCard() {
+  const r = C.routeCheck(S, night); if (!r.gps) return '';
+  const chip = (n, t, c) => n ? `<span class="loc ${c}" style="margin-right:10px">${t} ${n}</span>` : '';
+  const ord = r.ordTot ? Math.round(r.ordOk / r.ordTot * 100) : null;
+  return `<div class="card"><b>📍 Verificación del recorrido</b><div style="margin-top:6px">${chip(r.ok, '✔ en el lugar', 'ok')}${chip(r.far, '⚠ lejos del galpón', 'bad')}${chip(r.noloc, '⚠ sin ubicación', 'bad')}${chip(r.noref, '📍 guardadas', 'ok')}${chip(r.manual, '✎ manuales', 'warn')}</div>
+    ${ord != null ? `<div class="note" style="margin-top:6px">Orden de la ruta respetado: <b>${r.ordOk} de ${r.ordTot}</b> pasos (${ord}%)</div>` : ''}</div>`;
+}
+
+/* ---------- pantalla: Recorrido ---------- */
+function screenHoy() {
+  const ev = C.events(S), today = night === todayNight();
+  const done = ev.filter(e => C.getReg(S, night, e.g, e.k)), next = ev.find(e => !C.getReg(S, night, e.g, e.k));
+  let h = nightBar();
+  h += `<div class="card"><b>${done.length} de ${ev.length} registros hechos</b><div class="prog"><i style="width:${ev.length ? done.length / ev.length * 100 : 0}%"></i></div>`;
+  if (next) h += `<div class="next card" style="margin:8px 0 0"><div class="note">SIGUIENTE (#${next.n})</div><div class="big">G${next.g} · ${kname(next.k)}</div>
+     <div class="note">Programado ${C.fmt(next.min)} · ${C.moveText(S, next.g).a} ${C.moveText(S, next.g).t}</div>
+     <button class="btn full" style="margin-top:8px" data-act="${today ? 'now' : 'edit'}" data-g="${next.g}" data-k="${next.k}">${today ? 'Registrar ahora (' + C.nowHM() + ')' : 'Registrar hora'}</button></div>`;
+  else h += '<div class="note" style="margin-top:6px">✔ Todos los registros de esta noche están completos.</div>';
+  h += '</div>';
+  h += verifCard();
+  h += `<div class="chips"><button class="chip ${filter === 'all' ? 'on' : ''}" data-act="flt" data-v="all">Todos</button><button class="chip ${filter === 'pend' ? 'on' : ''}" data-act="flt" data-v="pend">Pendientes</button></div>`;
+  const list = ev.filter(e => filter === 'all' || !C.getReg(S, night, e.g, e.k));
+  if (!list.length) h += '<div class="empty">No hay registros pendientes 🎉</div>';
+  let prev = null;
+  list.forEach((e, i) => {
+    if (!prev || prev.k !== e.k || e.off - prev.off > 90) {
+      let j = i; while (j + 1 < list.length && list[j + 1].k === e.k && list[j + 1].off - list[j].off <= 90) j++;
+      const a = C.fmt(e.min), b = C.fmt(list[j].min);
+      h += `<div class="blk ${e.k}">${kname(e.k)} · ${a}${b !== a ? ' → ' + b : ''}</div>`;
+    }
+    prev = e;
+    const s = stat(e.g, e.k), mv = C.moveText(S, e.g), isNext = next && next.n === e.n;
+    h += `<div class="ev ${s ? (s.bad ? 'bad' : 'done') : ''} ${isNext ? 'nxt' : ''}" data-act="edit" data-g="${e.g}" data-k="${e.k}" data-n="${e.n}">
+      <div class="pos">#${e.pos}</div>
+      <div class="mid"><span class="gal">G${e.g}</span><span class="gc g${S.sheds[e.g].g}">${S.sheds[e.g].g}</span><div class="mv">${mv.a} ${mv.t}</div></div>
+      <div class="tm">prog <b>${C.fmt(e.min)}</b>${s ? `<br>real <b>${s.r}</b> (${s.d > 0 ? '+' : ''}${s.d} min)<br>${locTag(s.ls)}${whoTag(e.g, e.k, night)}` : ''}</div>
+      ${s ? `<div class="chk ${s.bad ? 'bad' : ''}">${s.bad ? '!' : '✔'}</div>` : (today ? `<button class="now" data-act="now" data-g="${e.g}" data-k="${e.k}">Ahora</button>` : '<div style="width:44px"></div>')}</div>`;
+  });
+  return h;
+}
+
+/* ---------- pantalla: Croquis ---------- */
+function screenCroquis() {
+  let h = nightBar() + '<div class="card"><div class="plan">';
+  for (let f = 1; f <= 6; f++) for (let c = 1; c <= 4; c++) {
+    const g = C.galAt(f, c), a = stat(g, 'on'), b = stat(g, 'off');
+    const mk = (s, t) => s ? `<span style="color:${s.bad ? 'var(--bad)' : ['far', 'noloc'].includes(s.ls.st) ? 'var(--warn)' : 'var(--ok)'};font-weight:700">${t}✓</span>` : `<span style="color:#9ca3af">${t}·</span>`;
+    h += `<div class="sh ${a && b ? 'full' : ''}" style="grid-column:${c};grid-row:${f}" data-act="shed" data-g="${g}">
+      <div class="g">G${g}</div><div class="o">#${S.route.indexOf(g) + 1} ${C.nextArrow(S, g)}</div><div class="st">${mk(a, 'P')} ${mk(b, 'A')}</div><div class="lt" style="background:${loteColor(g)}"></div></div>`;
+  }
+  h += '<div class="tower">TORRE<br>inicio y fin</div></div>';
+  h += '<div class="note" style="margin-top:8px">Toca un galpón para registrar o ver sus horarios. # = orden en la ruta · flecha = hacia dónde sigue · P/A = prendido/apagado registrado.</div></div>';
+  h += '<div class="card"><h3>Lotes</h3><div class="legend">' + S.lotes.map(l => `<span><i style="background:${l.color}"></i>${esc(l.c)}${l.sem != null && l.sem !== '' ? ' · ' + l.sem + ' sem.' : ''}</span>`).join('') + '</div></div>';
+  h += '<div class="card"><h3>Secuencia</h3><div class="seq">Torre → ' + S.route.map(g => 'G' + g).join(' → ') + ' → Torre</div></div>';
+  return h;
+}
+function shedModal(g) {
+  const sc = C.schedule(S)[g], sh = S.sheds[g], mv = C.moveText(S, g);
+  const row = k => { const s = stat(g, k); return `<div class="card" style="margin:0 0 8px;background:#f8fafc"><b>${kname(k)}</b> · prog ${C.fmt(sc[k]) || '—'}${s ? ` · real <b>${s.r}</b> (${s.d > 0 ? '+' : ''}${s.d} min)${s.bad ? ' ⚠' : ''}<br>${locTag(s.ls)}${mapLink(g, k, night)}${whoTag(g, k, night)}` : ''}
+    ${s && !admin ? '<div class="note" style="margin-top:6px">🔒 Registro guardado (solo el administrador puede corregirlo)</div>' : `<div class="row2" style="margin-top:8px"><button class="btn ${s ? 'alt' : ''}" data-m="${night === todayNight() ? 'now' : 'edit'}" data-k="${k}">${s ? 'Volver a registrar' : (night === todayNight() ? 'Ahora' : 'Registrar')}</button><button class="btn alt" data-m="edit" data-k="${k}">Editar hora</button></div>`}</div>`; };
+  const ov = modal(`<h2>G${g} <span class="gc g${sh.g}">${sh.g}</span></h2><div class="note" style="margin-bottom:10px">Ruta #${S.route.indexOf(g) + 1} · ${mv.a} ${mv.t} · Lote ${esc(sh.lote || '—')}</div>${row('on')}${row('off')}<button class="btn alt full" data-m="close">Cerrar</button>`);
+  ov.addEventListener('click', e => {
+    const b = e.target.closest('[data-m]'); if (!b) return; const m = b.dataset.m, k = b.dataset.k;
+    if (m === 'close') ov.remove();
+    else if (m === 'now') { ov.remove(); regNow(g, k); }
+    else if (m === 'edit') { ov.remove(); editTime(g, k, night); }
+  });
+}
+
+/* ---------- pantalla: Semana ---------- */
+function screenSemana() {
+  const sc = C.schedule(S), tol = +S.tol || 0;
+  let h = `<div class="bar"><button class="sq" data-act="wprev">◀</button><div class="d">Semana del ${C.dmy(weekMon)}<small>Lunes a domingo (noche que empieza cada día)</small></div><button class="sq" data-act="wnext">▶</button></div>`;
+  h += `<div class="row2" style="margin-bottom:10px"><button class="btn" data-act="xls">⬇ Descargar Excel</button><button class="btn alt" data-act="share">📤 Compartir</button></div>`;
+  h += '<div class="wk"><table><thead><tr><th class="f" rowspan="2">Galpón</th>';
+  for (let d = 0; d < 7; d++) h += `<th colspan="2">${C.DIAS[d].slice(0, 3)} ${C.dm(C.addDays(weekMon, d))}</th>`;
+  h += '<th rowspan="2">Noches</th></tr><tr>'; for (let d = 0; d < 7; d++) h += '<th>Pren.</th><th>Apag.</th>'; h += '</tr></thead><tbody>';
+  const tot = Array(14).fill(0);
+  for (let g = 11; g <= 34; g++) {
+    h += `<tr><td class="f"><b>G${g}</b> <span class="gc g${S.sheds[g].g}">${S.sheds[g].g}</span><br><span class="note">${C.fmt(sc[g].on) || '—'} – ${C.fmt(sc[g].off) || '—'}</span></td>`; let full = 0;
+    for (let d = 0; d < 7; d++) {
+      const dt = C.addDays(weekMon, d); const rr = {};
+      ['on', 'off'].forEach((k, i) => { const v = C.getReg(S, dt, g, k), dd = C.dev(C.toMin(v), sc[g][k]), bad = v && dd != null && Math.abs(dd) > tol; if (v) tot[d * 2 + i]++; rr[k] = v;
+        h += `<td class="t ${v ? (bad ? 'bad' : 'okc') : ''}" data-act="wedit" data-g="${g}" data-k="${k}" data-d="${dt}">${v || '·'}</td>`; });
+      if (rr.on && rr.off) full++;
+    }
+    h += `<td>${full} / 7</td></tr>`;
+  }
+  h += '<tr><td class="f"><b>Total</b></td>' + tot.map(n => `<td><b>${n}/24</b></td>`).join('') + '<td></td></tr></tbody></table></div>';
+  h += `<div class="note" style="margin-top:8px">Verde = dentro de la tolerancia (${tol} min) · Rojo = fuera de tolerancia · Toca una celda para escribir o corregir la hora.</div>`;
+  return h;
+}
+
+/* ---------- calibración de ubicaciones (admin) ---------- */
+async function calibrate(g) {
+  if (busy) return false; busy = true; const o = busyOv('Obteniendo ubicación…'); const f = await getFix(); o.remove(); busy = false;
+  if (f.e) { toast(GERR[f.e] || 'Sin ubicación'); return false; }
+  if (f.ac > 50 && !confirm('La precisión es baja (±' + f.ac + ' m). ¿Guardar de todos modos?')) return false;
+  S.geo.refs[g] = { la: f.la, lo: f.lo, ac: f.ac }; save(); toast('G' + g + ' calibrado (±' + f.ac + ' m)'); return true;
+}
+function calibModal() {
+  let i = S.route.findIndex(g => !S.geo.refs[g]); if (i < 0) i = 0;
+  const ov = modal('<div id="cb"></div>'), box = ov.querySelector('#cb');
+  const draw = () => {
+    const g = S.route[i], f = S.geo.refs[g];
+    box.innerHTML = `<h2>Calibrar G${g} <span class="note">(#${i + 1} de 24)</span></h2><div class="note" style="margin-bottom:10px">Párate en el punto donde se registra este galpón (por ejemplo, junto a su puerta) y pulsa <b>Guardar aquí</b>. ${f ? 'Ya tiene referencia; se reemplazará.' : ''}</div>
+      <button class="btn ok full" id="cs">📍 Guardar aquí</button><div class="row2" style="margin-top:8px"><button class="btn alt" id="cp">◀ Anterior</button><button class="btn alt" id="cn">Saltar ▶</button></div><button class="btn alt full" style="margin-top:8px" id="cx">Terminar</button>`;
+    box.querySelector('#cs').onclick = async () => { if (await calibrate(g)) { if (i >= 23) { ov.remove(); toast('Calibración completa'); render(true); } else { i++; draw(); } } };
+    box.querySelector('#cp').onclick = () => { i = Math.max(0, i - 1); draw(); };
+    box.querySelector('#cn').onclick = () => { i = Math.min(23, i + 1); draw(); };
+    box.querySelector('#cx').onclick = () => { ov.remove(); render(true); };
+  };
+  draw();
+}
+async function geoTest() {
+  if (busy) return; busy = true; const o = busyOv('Obteniendo ubicación…'); const f = await getFix(); o.remove(); busy = false;
+  if (f.e) { modal(`<h2>Ubicación</h2><div class="note">${GERR[f.e] || 'Sin ubicación'}</div>`); return; }
+  let best = null; Object.keys(S.geo.refs).forEach(g => { const d = Math.round(C.haversine(f, S.geo.refs[g])); if (!best || d < best.d) best = { g, d }; });
+  const ov = modal(`<h2>📍 Mi ubicación</h2><div class="note">Lat ${f.la} · Lon ${f.lo}<br>Precisión ±${f.ac} m</div><div style="margin:10px 0">${best ? `Galpón calibrado más cercano: <b>G${best.g}</b> a <b>${best.d} m</b> ${best.d <= S.geo.radius ? '✔ (dentro del radio)' : '⚠ (fuera del radio de ' + S.geo.radius + ' m)'}` : 'Aún no hay galpones calibrados.'}</div><button class="btn alt full" id="gx">Cerrar</button>`);
+  ov.querySelector('#gx').onclick = () => ov.remove();
+}
+function geoSection() {
+  const n = Object.keys(S.geo.refs).length;
+  let h = `<details><summary>Ubicación GPS (${n}/24 calibrados)</summary><div class="note" style="margin:6px 0">Cada registro guarda dónde estaba el celular. Para saber si está en el galpón correcto, calibra un punto de referencia por galpón.</div>
+    <div class="row2"><div><label class="f">Radio permitido (m)</label><input type="number" inputmode="numeric" min="5" data-f="georad" value="${S.geo.radius}"></div>
+    <div><label class="f">Exigir ubicación</label><select data-f="georeq"><option value="0" ${!S.geo.req ? 'selected' : ''}>No (solo marca)</option><option value="1" ${S.geo.req ? 'selected' : ''}>Sí (no deja registrar sin GPS)</option></select></div></div>
+    <button class="btn full" style="margin-top:10px" data-act="geocal">📍 Calibrar recorriendo la ruta</button>
+    <button class="btn alt full" style="margin-top:8px" data-act="geotest">Probar mi ubicación ahora</button><div style="margin-top:8px">`;
+  S.route.forEach(g => { const f = S.geo.refs[g];
+    h += `<div class="rt"><div class="g">G${g}</div><div class="m" style="flex:1">${f ? f.la.toFixed(5) + ', ' + f.lo.toFixed(5) + (f.ac ? ' (±' + f.ac + ' m)' : '') : 'sin calibrar'}</div><button style="width:auto;padding:0 10px;font-size:13px" data-act="geosave" data-g="${g}">Guardar aquí</button>${f ? `<button data-act="geoclr" data-g="${g}">✕</button>` : ''}</div>`; });
+  return h + '</div></details>';
+}
+
+/* ---------- pantalla: Ajustes ---------- */
+function screenAjustes() {
+  let h = '';
+  if (!admin) {
+    h += `<div class="card"><h3>👤 Usuario actual</h3><div style="font-size:18px;font-weight:700;color:var(--navy);margin-bottom:8px">${esc(user) || '—'}</div><button class="btn alt full" data-act="chuser">Cambiar de usuario</button></div>`;
+    h += `<div class="card"><h3>🔒 Modo operador</h3><div class="note" style="margin-bottom:10px">Puedes registrar las horas de prender y apagar. Los horarios, la ruta, los lotes y los datos solo los puede cambiar el administrador.</div><div class="note" style="margin-bottom:10px">📍 Al registrar una hora, la app guarda también la ubicación del celular en ese momento. No se rastrea de forma continua.</div><button class="btn full" data-act="login">Ingresar como administrador</button></div>`;
+    if (installEvt) h += '<div class="card"><h3>Instalar en este celular</h3><button class="btn full" data-act="install">📲 Instalar la app</button></div>';
+    h += `<div class="card"><h3>Descargar</h3><div class="row2"><button class="btn" data-act="xls">⬇ Excel</button><button class="btn alt" data-act="share">📤 Compartir</button></div></div>`;
+    return h;
+  }
+  h += `<div class="card" style="background:#ecfdf5"><b>🔓 Administrador: ${esc(getAdmin().user)}</b><div class="row2" style="margin-top:8px"><button class="btn alt" data-act="chpw">Cambiar contraseña</button><button class="btn red" data-act="logout">Cerrar sesión</button></div></div>`;
+  if (installEvt) h += '<div class="card"><h3>Instalar en este celular</h3><button class="btn full" data-act="install">📲 Instalar la app</button></div>';
+  h += `<div class="card"><h3>General</h3><div class="g3"><div><label class="f">Inicio del gráfico</label><input type="time" data-f="inicio" value="${S.inicio}"></div>
+    <div><label class="f">Tolerancia (min)</label><input type="number" inputmode="numeric" min="0" data-f="tol" value="${S.tol}"></div>
+    <div><label class="f">Responsable</label><input type="text" data-f="resp" value="${esc(S.resp)}"></div></div></div>`;
+  h += '<details open><summary>Horario de cada grupo</summary>';
+  ['A', 'B', 'C', 'D'].forEach(k => { const g = S.groups[k];
+    h += `<div class="gtitle"><span class="gc g${k}">${k}</span> Grupo ${k}</div><div class="g3"><div><label class="f">Prender</label><input type="time" data-f="grp" data-grp="${k}" data-p="on" value="${g.on}"></div>
+    <div><label class="f">Apagar</label><input type="time" data-f="grp" data-grp="${k}" data-p="off" value="${g.off}"></div>
+    <div><label class="f">Min. entre galpones</label><input type="number" inputmode="numeric" min="0" data-f="grp" data-grp="${k}" data-p="gap" value="${g.gap || 0}"></div></div>`; });
+  h += '<div class="note" style="margin-top:8px">Min. entre galpones: 0 = todos a la misma hora; 1 = el primer galpón de la ruta a la hora indicada, el siguiente 1 minuto después, etc. Deja vacío un grupo para que sus galpones no se prendan.</div></details>';
+  h += `<details><summary>Turnos recientes (${S.turnos.length})</summary><div class="note" style="margin:6px 0">Quién abrió la app e inició la labor. Cada registro de hora guarda además el nombre de quien lo hizo.</div>`
+    + (S.turnos.slice(-25).reverse().map(t => { const d = new Date(t.t); return `<div class="rt"><div class="g" style="font-size:15px">${esc(t.u)}</div><div class="m">${C.dm(C.ds(d))} ${pad2(d.getHours())}:${pad2(d.getMinutes())}</div></div>`; }).join('') || '<div class="note">Aún no hay turnos.</div>') + '</details>';
+  h += geoSection();
+  h += '<details><summary>Ruta de recorrido</summary><div class="note" style="margin:6px 0">Sale de la torre (junto a G11). Usa ▲ ▼ para cambiar el orden; el croquis, el orden y los horarios escalonados se actualizan solos.</div>';
+  S.route.forEach((g, i) => { const mv = C.moveText(S, g);
+    h += `<div class="rt"><div class="n">#${i + 1}</div><div class="g">G${g}</div><div class="m">${mv.a} ${mv.t}</div><button data-act="up" data-i="${i}" ${i === 0 ? 'disabled' : ''}>▲</button><button data-act="down" data-i="${i}" ${i === 23 ? 'disabled' : ''}>▼</button></div>`; });
+  h += '<button class="btn alt full" style="margin-top:10px" data-act="rroute">Restablecer ruta recomendada (lazo cerrado)</button></details>';
+  h += '<details><summary>Galpones (grupo, horario propio y lote)</summary><div class="note" style="margin:6px 0">Horario propio vacío = usa el de su grupo.</div>';
+  for (let g = 11; g <= 34; g++) { const s = S.sheds[g];
+    h += `<div class="shrow"><b>G${g}</b><div class="g3"><div><label class="f">Grupo</label><select data-f="shed" data-g="${g}" data-p="g">${['A', 'B', 'C', 'D'].map(k => `<option ${s.g === k ? 'selected' : ''}>${k}</option>`).join('')}</select></div>
+      <div><label class="f">Prende propio</label><input type="time" data-f="shed" data-g="${g}" data-p="on" value="${s.on}"></div><div><label class="f">Apaga propio</label><input type="time" data-f="shed" data-g="${g}" data-p="off" value="${s.off}"></div></div>
+      <label class="f">Lote</label><select data-f="shed" data-g="${g}" data-p="lote">${S.lotes.map(l => `<option ${s.lote === l.c ? 'selected' : ''}>${esc(l.c)}</option>`).join('')}</select></div>`; }
+  h += '</details>';
+  h += '<details><summary>Lotes (color y semanas)</summary>';
+  S.lotes.forEach((l, i) => { h += `<div class="lrow"><input type="color" data-f="lote" data-i="${i}" data-p="color" value="${l.color}"><input type="text" data-f="lote" data-i="${i}" data-p="c" value="${esc(l.c)}"><input type="number" inputmode="numeric" placeholder="sem." data-f="lote" data-i="${i}" data-p="sem" value="${l.sem == null ? '' : l.sem}"></div>`; });
+  h += '</details>';
+  h += `<div class="card"><h3>Datos</h3><div class="row2"><button class="btn" data-act="xls">⬇ Excel</button><button class="btn alt" data-act="share">📤 Compartir</button></div>
+    <div class="row2" style="margin-top:8px"><button class="btn alt" data-act="bk">Respaldo (.json)</button><button class="btn alt" data-act="rs">Restaurar respaldo</button></div>
+    <input type="file" id="rsf" accept=".json,application/json" style="display:none">
+    <button class="btn red full" style="margin-top:8px" data-act="clr">Borrar todos los registros</button>
+    <div class="note" style="margin-top:8px">Los datos se guardan solo en este celular. Haz un respaldo de vez en cuando.</div></div>`;
+  h += `<div class="card"><h3>Cómo instalar en Android</h3><div class="note">1) Abre la app en Chrome.<br>2) Menú ⋮ → <b>Instalar app</b> o <b>Añadir a pantalla de inicio</b>.<br>3) Se abre como una app normal y funciona sin internet.</div></div>`;
+  return h;
+}
+
+/* ---------- render ---------- */
+const TITLES = { hoy: ['Recorrido', 'Registro minuto a minuto'], croq: ['Croquis', 'Ubicación de galpones y ruta'], sem: ['Semana', 'Registro semanal'], aju: ['Ajustes', 'Horarios, ruta y datos'] };
+function render(keepScroll) {
+  const m = $('main'), y = m.scrollTop, prevOpen = keepScroll ? [...m.querySelectorAll('details')].map(d => d.open) : null;
+  m.innerHTML = { hoy: screenHoy, croq: screenCroquis, sem: screenSemana, aju: screenAjustes }[tab]();
+  if (prevOpen && prevOpen.length) m.querySelectorAll('details').forEach((d, i) => { if (i < prevOpen.length) d.open = prevOpen[i]; });
+  document.querySelectorAll('nav button').forEach(b => b.classList.toggle('on', b.dataset.tab === tab));
+  const ub = $('#ubtn'); ub.textContent = '👤 ' + (user || '—');
+  const ab = $('#abtn'); ab.textContent = admin ? '🔓 ' + getAdmin().user : '🔒'; ab.setAttribute('aria-label', admin ? 'Administrador' : 'Ingresar como administrador');
+  $('#ttl').innerHTML = TITLES[tab][0] + '<small>' + TITLES[tab][1] + '</small>';
+  if (keepScroll) m.scrollTop = y;
+  else if (tab === 'hoy') { const n = m.querySelector('.ev.nxt'); if (n) n.scrollIntoView({ block: 'center' }); }
+}
+
+/* ---------- eventos ---------- */
+document.addEventListener('click', e => {
+  const nb = e.target.closest('nav button'); if (nb) { tab = nb.dataset.tab; render(); return; }
+  const el = e.target.closest('[data-act]'); if (!el || !el.closest('main, header')) return;
+  const a = el.dataset.act, g = +el.dataset.g, k = el.dataset.k;
+  if (['up', 'down', 'rroute', 'bk', 'rs', 'clr', 'geocal', 'geosave', 'geoclr', 'geotest'].includes(a) && !admin) { denied('Esta acción es solo para el administrador.'); return; }
+  if (a === 'chuser') askUser(true);
+  else if (a === 'login') loginModal();
+  else if (a === 'logout') { setAdmin(false); toast('Sesión cerrada'); tab = 'hoy'; render(); }
+  else if (a === 'chpw') pwModal();
+  else if (a === 'geocal') calibModal();
+  else if (a === 'geotest') geoTest();
+  else if (a === 'geosave') calibrate(g).then(ok => ok && render(true));
+  else if (a === 'geoclr') { delete S.geo.refs[g]; save(); render(true); }
+  else if (a === 'now') regNow(g, k);
+  else if (a === 'edit') editTime(g, k, night);
+  else if (a === 'wedit') editTime(g, k, el.dataset.d);
+  else if (a === 'shed') shedModal(g);
+  else if (a === 'nprev') { night = C.addDays(night, -1); weekMon = C.mondayOf(night); render(); }
+  else if (a === 'nnext') { night = C.addDays(night, 1); weekMon = C.mondayOf(night); render(); }
+  else if (a === 'ntoday') { night = todayNight(); weekMon = C.mondayOf(night); render(); }
+  else if (a === 'wprev') { weekMon = C.addDays(weekMon, -7); render(true); }
+  else if (a === 'wnext') { weekMon = C.addDays(weekMon, 7); render(true); }
+  else if (a === 'flt') { filter = el.dataset.v; render(true); }
+  else if (a === 'xls') downloadXlsx();
+  else if (a === 'share') shareXlsx();
+  else if (a === 'up' || a === 'down') { const i = +el.dataset.i, j = a === 'up' ? i - 1 : i + 1; [S.route[i], S.route[j]] = [S.route[j], S.route[i]]; save(); render(true); }
+  else if (a === 'rroute') { if (confirm('¿Volver a la ruta recomendada?')) { S.route = C.OPT_ROUTE.slice(); save(); render(true); } }
+  else if (a === 'install' && installEvt) { installEvt.prompt(); installEvt.userChoice.finally(() => { installEvt = null; render(true); }); }
+  else if (a === 'bk') { saveFile(new File([JSON.stringify(S)], 'respaldo_luces_galpones_' + C.ds(new Date()) + '.json', { type: 'application/json' })); toast('Respaldo descargado'); }
+  else if (a === 'rs') $('#rsf').click();
+  else if (a === 'clr') { if (confirm('¿Borrar TODOS los registros de horas? No se puede deshacer.')) { S.reg = {}; save(); render(true); toast('Registros borrados'); } }
+});
+document.addEventListener('change', e => {
+  const t = e.target;
+  if (!admin && (t.id === 'rsf' || t.dataset.f)) { t.value = ''; denied('Los cambios de configuración son solo para el administrador.'); return; }
+  if (t.id === 'rsf') { const f = t.files[0]; if (!f) return; const r = new FileReader(); r.onload = () => { try { S = C.mergeState(JSON.parse(r.result)); save(); render(); toast('Respaldo restaurado'); } catch (x) { toast('Archivo no válido'); } }; r.readAsText(f); return; }
+  const f = t.dataset.f; if (!f) return; const v = t.value;
+  if (f === 'inicio') { if (v) S.inicio = v; }
+  else if (f === 'tol') S.tol = Math.max(0, +v || 0);
+  else if (f === 'georad') S.geo.radius = Math.max(5, +v || 40);
+  else if (f === 'georeq') S.geo.req = v === '1';
+  else if (f === 'resp') S.resp = v;
+  else if (f === 'grp') S.groups[t.dataset.grp][t.dataset.p] = t.dataset.p === 'gap' ? Math.max(0, +v || 0) : v;
+  else if (f === 'shed') S.sheds[+t.dataset.g][t.dataset.p] = v;
+  else if (f === 'lote') { const l = S.lotes[+t.dataset.i], p = t.dataset.p;
+    if (p === 'c') { const old = l.c, nv = v.trim() || old; Object.values(S.sheds).forEach(s => { if (s.lote === old) s.lote = nv; }); l.c = nv; }
+    else if (p === 'sem') l.sem = v === '' ? null : +v; else l[p] = v; }
+  save();
+});
+$('#xbtn').addEventListener('click', downloadXlsx);
+$('#abtn').addEventListener('click', () => (admin ? adminMenu() : loginModal()));
+$('#ubtn').addEventListener('click', () => (user ? userMenu() : askUser()));
+['click', 'touchstart', 'keydown'].forEach(ev => document.addEventListener(ev, touch, { passive: true }));
+setInterval(() => { if (admin && Date.now() - lastAct > IDLE_MS) { setAdmin(false); toast('Sesión de administrador cerrada por inactividad'); if (tab === 'aju') tab = 'hoy'; render(true); } }, 20000);
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); installEvt = e; if (tab === 'aju') render(true); });
+if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) navigator.serviceWorker.register('sw.js').catch(() => {});
+render();
+if (!user) askUser();
+})();
+</script>
+</body></html>

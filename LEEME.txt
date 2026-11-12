@@ -1,0 +1,26 @@
+LUCES GALPONES – App para Android (PWA)
+
+OPCION 1 (la mas simple, sin internet ni servidor)
+ 1. Pasa el archivo Galpones_App.html al celular (WhatsApp, Drive, cable).
+ 2. Abrelo con Chrome. Funciona igual; el boton "Excel" descarga el archivo en Descargas.
+
+OPCION 2 (se instala como app, con icono y sin barra del navegador)
+ 1. Sube TODOS los archivos de esta carpeta a un hosting con https
+    (GitHub Pages, Netlify, Cloudflare Pages... son gratis).
+ 2. Abre la direccion en Chrome del celular.
+ 3. Menu (3 puntos) -> "Instalar app" / "Anadir a pantalla de inicio".
+ 4. Despues funciona sin internet.
+
+Los datos se guardan solo en el celular. Usa Ajustes -> "Respaldo (.json)" (modo administrador) para guardarlos.
+Administrador: usuario kevin (la contrasena se puede cambiar en la app, desde el candado de arriba).
+
+UBICACION (GPS)
+ - Para que el celular entregue la ubicacion hay que abrir la app desde una direccion https (Opcion 2).
+   Abierta como archivo local (Opcion 1), Chrome puede negar la ubicacion.
+ - Al abrir por primera vez, aceptar el permiso de ubicacion. Si esta bloqueado: Chrome -> Configuracion del sitio -> Ubicacion -> Permitir.
+ - El administrador calibra los galpones en Ajustes -> Ubicacion GPS -> "Calibrar recorriendo la ruta".
+
+USUARIO / TURNOS
+ - Al abrir la app pide el nombre de quien inicia la labor (obligatorio). Se guarda en cada hora registrada y en el historial de turnos.
+ - Se vuelve a pedir al abrir la app de nuevo o pasadas 12 horas. Para cambiar de persona: boton "Usuario" de arriba.
+ - El Excel trae "Registrado por" y una hoja "Turnos".
