@@ -24,3 +24,20 @@ USUARIO / TURNOS
  - Al abrir la app pide el nombre de quien inicia la labor (obligatorio). Se guarda en cada hora registrada y en el historial de turnos.
  - Se vuelve a pedir al abrir la app de nuevo o pasadas 12 horas. Para cambiar de persona: boton "Usuario" de arriba.
  - El Excel trae "Registrado por" y una hoja "Turnos".
+
+VERSION 7 – ALERTAS Y REGISTRO SIN ERRORES
+ - Modo GUIADO (pantalla Recorrido): muestra un solo galpon a la vez, en grande, con la accion que toca:
+   VERDE = ENCENDER (foco prendido)   ROJO = APAGAR (foco apagado).
+ - Para registrar hay que MANTENER PRESIONADO el boton 1 segundo (hasta que se llene). Un toque rapido no registra nada.
+ - Si la accion no corresponde a la hora (ej. APAGAR cuando toca ENCENDER, o un galpon sin encendido),
+   la app pide confirmacion antes de guardar.
+ - Despues de registrar aparece "Deshacer" durante 30 segundos por si hubo un error.
+ - El modo LISTA sigue disponible, con colores verde/rojo por accion.
+
+ALERTAS
+ - Cada celular debe tocar "Activar alertas" una vez y aceptar el permiso de notificaciones.
+ - Avisa X minutos antes (por defecto 10), a la hora exacta y repite si hay galpones atrasados.
+   El administrador lo configura en Ajustes -> Alertas y proteccion contra errores.
+ - IMPORTANTE: las alertas suenan si la app esta abierta o en segundo plano. Si Android cierra la app
+   por completo (ahorro de bateria), no sonaran. Recomendado: activar "Pantalla siempre encendida"
+   durante el turno y quitar la app del ahorro de bateria (Ajustes Android -> Apps -> Chrome/Galpones -> Bateria -> Sin restricciones).

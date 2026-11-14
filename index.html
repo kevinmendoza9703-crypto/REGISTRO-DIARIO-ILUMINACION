@@ -106,6 +106,52 @@ summary{font-weight:700;color:var(--navy);font-size:15px;min-height:28px}
 .who{font-size:11px;color:var(--navy);font-weight:700}
 #ubtn{max-width:104px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:9px 9px}
 header h1{min-width:0}
+/* ===== v7: acciones con color fijo (ENCENDER verde / APAGAR rojo) ===== */
+:root{--on:#15803d;--onL:#dcfce7;--offc:#b91c1c;--offL:#fee2e2}
+.blk.on{color:var(--on)}.blk.off{color:var(--offc)}
+.ev.k-on{border-left-color:var(--on)}.ev.k-off{border-left-color:var(--offc)}
+.ev .kt{font-size:12px;font-weight:700}.ev.k-on .kt{color:var(--on)}.ev.k-off .kt{color:var(--offc)}
+.vt{display:flex;gap:6px;margin:0 0 10px}.vt .chip{flex:1;text-align:center;font-weight:700;padding:10px}
+.guide{border-radius:18px;padding:14px;margin-bottom:10px;color:#fff;box-shadow:0 2px 8px rgba(0,0,0,.15);text-align:center}
+.guide.k-on{background:linear-gradient(160deg,#16a34a,#14532d)}.guide.k-off{background:linear-gradient(160deg,#dc2626,#7f1d1d)}
+.guide .gtop{font-size:12px;opacity:.9;display:flex;justify-content:space-between}
+.guide .ggal{font-size:64px;font-weight:800;line-height:1;margin:6px 0 2px;letter-spacing:1px}
+.guide .gmv{font-size:16px;font-weight:700;opacity:.95}
+.guide .gact{font-size:34px;font-weight:800;margin:10px 0 4px;letter-spacing:1px}
+.guide .gact .ico{font-size:38px;vertical-align:-4px}
+.guide .gprog{font-size:14px;opacity:.95}
+.guide .gst{display:inline-block;margin-top:8px;border-radius:12px;padding:4px 10px;font-size:13px;font-weight:700;background:rgba(255,255,255,.22)}
+.guide .gst.late{background:#fde047;color:#111}
+.hold{position:relative;overflow:hidden;width:100%;border:3px solid #fff;border-radius:16px;color:#fff;font-weight:800;font-size:18px;padding:18px 10px;min-height:76px;margin-top:12px;
+  touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.hold.k-on{background:#166534}.hold.k-off{background:#991b1b}
+.hold .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:rgba(255,255,255,.38);pointer-events:none}
+.hold.holding .fill{width:100%;transition:width var(--hold,1s) linear}
+.hold .lbl{position:relative;pointer-events:none}
+.hold.sm{width:auto;min-width:116px;min-height:50px;margin:0;padding:8px 8px;font-size:13px;border-width:2px;border-radius:12px}
+.hold.sm.k-on{background:var(--on)}.hold.sm.k-off{background:var(--offc)}
+.hold.sm.k-on,.hold.sm.k-off{border-color:transparent}
+.hold.sm.full{width:100%;min-height:58px;font-size:16px}
+.upnext{font-size:13px;color:var(--mut);text-align:center;margin:4px 0 10px}
+.upnext b.on{color:var(--on)}.upnext b.off{color:var(--offc)}
+.flash{position:fixed;inset:0;z-index:70;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;font-size:20px;padding:20px}
+.flash.k-on{background:rgba(21,128,61,.96)}.flash.k-off{background:rgba(185,28,28,.96)}
+.flash .fi{font-size:84px}.flash b{font-size:34px;margin:8px 0}
+.undo{margin-bottom:10px;background:#111;color:#fff;border-radius:14px;padding:10px 12px;display:flex;align-items:center;gap:10px;font-size:14px;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.undo span{flex:1}.undo button{background:#fde047;color:#111;border:0;border-radius:10px;font-weight:800;padding:10px 14px;font-size:14px}
+.abar{position:fixed;left:8px;right:8px;top:calc(env(safe-area-inset-top,0px) + 8px);z-index:65;border-radius:16px;padding:14px;color:#fff;box-shadow:0 6px 20px rgba(0,0,0,.35);animation:pulse 1s ease-in-out 3}
+.abar.k-on{background:#15803d}.abar.k-off{background:#b91c1c}
+.abar h4{margin:0 0 4px;font-size:19px}.abar .note{color:#fff;opacity:.95;font-size:14px}
+.abar .row2{margin-top:10px}.abar .btn{background:#fff;color:#111}.abar .btn.alt{background:transparent;color:#fff;border-color:#fff}
+@keyframes pulse{50%{transform:scale(1.03)}}
+.alc{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.alc .t{flex:1;min-width:150px;font-size:13px}
+.alc button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 10px;font-size:13px;font-weight:700;color:var(--navy);min-height:40px}
+.alc button.on{background:#fef9c3;border-color:#eab308}
+.wbox{border-radius:14px;padding:12px;margin-bottom:10px;font-size:15px}
+.wbox.k-on{background:var(--onL);border:2px solid var(--on)}.wbox.k-off{background:var(--offL);border:2px solid var(--offc)}
+.btn.kon{background:var(--on)}.btn.koff{background:var(--offc)}
+h2.kt-on{color:var(--on)}h2.kt-off{color:var(--offc)}
 </style></head><body>
 <header><h1 id="ttl">Recorrido</h1><button class="hbtn" id="ubtn">👤 —</button><button class="hbtn" id="abtn">🔒</button><button class="hbtn" id="xbtn">⬇ Excel</button></header>
 <main></main>
@@ -152,7 +198,8 @@ function defaultState() {
   for (let g = 11; g <= 34; g++) sheds[g] = { g: [19, 23, 25].includes(g) ? 'A' : 'B', on: '', off: '', lote: lot[g] };
   return { v: 1, inicio: '20:00', tol: 15, resp: '',
     groups: { A: { on: '22:00', off: '23:30', gap: 0 }, B: { on: '02:00', off: '06:00', gap: 0 }, C: { on: '', off: '', gap: 0 }, D: { on: '', off: '', gap: 0 } },
-    sheds, route: OPT_ROUTE.slice(), lotes, reg: {}, geo: { req: false, radius: 40, refs: {} }, turnos: [] };
+    sheds, route: OPT_ROUTE.slice(), lotes, reg: {}, geo: { req: false, radius: 40, refs: {} }, turnos: [],
+    alert: { on: true, before: 10, late: 5 }, warnMin: 45 };
 }
 function mergeState(x) {
   const d = defaultState(); if (!x || typeof x !== 'object') return d;
@@ -164,6 +211,8 @@ function mergeState(x) {
   o.reg = x.reg || {};
   o.turnos = Array.isArray(x.turnos) ? x.turnos : [];
   o.geo = Object.assign({ req: false, radius: 40, refs: {} }, x.geo || {}); o.geo.refs = o.geo.refs || {};
+  o.alert = Object.assign({ on: true, before: 10, late: 5 }, x.alert || {});
+  o.warnMin = x.warnMin == null || isNaN(+x.warnMin) ? 45 : +x.warnMin;
   return o;
 }
 
@@ -475,7 +524,11 @@ const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g,
 let tab = 'hoy', night = C.nightOf(new Date(), S), weekMon = C.mondayOf(night), filter = 'all', installEvt = null;
 const todayNight = () => C.nightOf(new Date(), S);
 const pad2 = n => String(n).padStart(2, '0');
-const kname = k => k === 'on' ? 'PRENDER' : 'APAGAR';
+const kname = k => k === 'on' ? 'ENCENDER' : 'APAGAR';
+const kdone = k => k === 'on' ? 'ENCENDIDO' : 'APAGADO';
+const kico = k => k === 'on' ? '💡' : '🌑';
+const evAt = (n, e) => { const ini = C.toMin(S.inicio) == null ? 1200 : C.toMin(S.inicio); return C.pd(n).getTime() + (ini + e.off) * 60000; };
+const minTxt = m => { m = Math.round(Math.abs(m)); return m >= 60 ? Math.floor(m / 60) + ' h ' + (m % 60) + ' min' : m + ' min'; };
 const loteColor = g => { const l = S.lotes.find(x => x.c === S.sheds[g].lote); return l ? l.color : '#ffffff'; };
 
 function toast(t) { const d = document.createElement('div'); d.className = 'toast'; d.textContent = t; document.body.appendChild(d); setTimeout(() => d.remove(), 2200); }
@@ -496,7 +549,7 @@ let Q = { ev: [], tur: [], cfgDirty: false, cfgTs: 0, last: 0, err: '' }; try { 
 const saveQ = () => { try { localStorage.setItem(QKEY, JSON.stringify(Q)); } catch (e) {} };
 const saveSY = () => { try { localStorage.setItem(SKEY, JSON.stringify(SY)); } catch (e) {} };
 const syncOn = () => !!(SY.url && SY.key);
-const cfgData = () => ({ inicio: S.inicio, tol: S.tol, resp: S.resp, groups: S.groups, sheds: S.sheds, route: S.route, lotes: S.lotes, geo: S.geo });
+const cfgData = () => ({ inicio: S.inicio, tol: S.tol, resp: S.resp, groups: S.groups, sheds: S.sheds, route: S.route, lotes: S.lotes, geo: S.geo, alert: S.alert, warnMin: S.warnMin });
 let lastCfgStr = JSON.stringify(cfgData()), flushing = false, flushT = null, retryT = null;
 function cfgWatch() { const cs = JSON.stringify(cfgData()); if (cs === lastCfgStr) return; lastCfgStr = cs; if (!syncOn()) return; Q.cfgDirty = true; Q.cfgTs = Date.now(); saveQ(); scheduleFlush(1500); }
 function evFrom(n, g, k) {
@@ -719,15 +772,58 @@ const GERR = { 'denegado': 'Permiso de ubicación denegado', 'tiempo': 'No se pu
 let busy = false;
 function busyOv(t) { const d = document.createElement('div'); d.className = 'ov'; d.style.alignItems = 'center'; d.style.justifyContent = 'center'; d.innerHTML = '<div class="sheet" style="width:auto;border-radius:16px;text-align:center;padding:22px 26px"><div style="font-size:34px">📍</div><b>' + t + '</b></div>'; document.body.appendChild(d); return d; }
 /* Registra la hora de ahora + ubicación. Devuelve true si se guardó. */
+/* Revisa si el registro parece un error (acción equivocada u hora muy distinta a la programada) */
+function regWarnings(g, k, date) {
+  const w = [], sc = C.schedule(S)[g], prog = sc[k];
+  const d = C.dev(C.toMin(C.nowHM()), prog), lim = +S.warnMin || 0;
+  if (lim > 0 && d != null && Math.abs(d) > lim)
+    w.push(`La hora programada para <b>${kname(k)}</b> el G${g} es <b>${C.fmt(prog)}</b> y ahora son <b>${C.nowHM()}</b> (${minTxt(d)} ${d < 0 ? 'antes' : 'después'}).`);
+  if (k === 'off' && sc.on != null && !C.getReg(S, date, g, 'on'))
+    w.push(`El G${g} todavía <b>no tiene ENCENDIDO</b> registrado esta noche.`);
+  const other = k === 'on' ? 'off' : 'on', od = C.dev(C.toMin(C.nowHM()), sc[other]);
+  if (!C.getReg(S, date, g, other) && od != null && d != null && Math.abs(od) + 10 < Math.abs(d))
+    w.push(`A esta hora le corresponde <b>${kname(other)}</b> (programado ${C.fmt(sc[other])}). ¿Seguro que quieres <b>${kname(k)}</b>?`);
+  return w;
+}
+function confirmWarn(g, k, warns) {
+  return new Promise(res => {
+    const ov = modal(`<h2 class="kt-${k}">⚠ Revisa antes de registrar</h2><div class="wbox k-${k}"><div style="font-size:22px;font-weight:800;margin-bottom:6px">${kico(k)} G${g} · ${kname(k)}</div>${warns.map(x => '<div style="margin-top:6px">• ' + x + '</div>').join('')}</div>
+      <button class="btn alt full" id="wc" style="min-height:58px;font-size:17px">✖ No, cancelar</button>
+      <button class="btn ${k === 'on' ? 'kon' : 'koff'} full" id="wy" style="margin-top:10px">Sí, registrar ${kname(k)} igual</button>`, true);
+    ov.querySelector('#wc').onclick = () => { ov.remove(); res(false); };
+    ov.querySelector('#wy').onclick = () => { ov.remove(); res(true); };
+  });
+}
+function flash(k, title, sub) {
+  const d = document.createElement('div'); d.className = 'flash k-' + k;
+  d.innerHTML = `<div class="fi">${kico(k)}</div><b>${title}</b><div>${sub}</div>`;
+  d.onclick = () => d.remove(); document.body.appendChild(d); setTimeout(() => d.remove(), 1700);
+  try { navigator.vibrate && navigator.vibrate(k === 'on' ? 120 : [80, 60, 80]); } catch (e) {}
+}
+/* Deshacer: el operador puede anular su último registro durante 30 s */
+const UNDO_MS = 30000; let lastReg = null, undoT = null;
+function showUndo(g, k, date, hm) {
+  lastReg = { g, k, date, hm, ts: Date.now() };
+  clearTimeout(undoT); undoT = setTimeout(() => { lastReg = null; if (tab === 'hoy' && !holdEl && !document.querySelector('.ov')) render(true); }, UNDO_MS + 200);
+}
+function undoCard() {
+  if (!lastReg || Date.now() - lastReg.ts > UNDO_MS || lastReg.date !== night) return '';
+  const r = lastReg;
+  return `<div class="undo"><span>✔ Último: ${kico(r.k)} <b>G${r.g} ${kdone(r.k)}</b> ${r.hm}<br><small style="opacity:.8">¿Te equivocaste? Puedes anularlo por 30 s</small></span><button data-act="undo">↶ Deshacer</button></div>`;
+}
 async function registerNow(g, k, date) {
   if (!user) { askUser(); return false; }
-  if (busy) return false; busy = true;
+  if (busy) return false;
+  const warns = regWarnings(g, k, date);
+  if (warns.length && !(await confirmWarn(g, k, warns))) { toast('No se registró nada'); return false; }
+  busy = true;
   const hm = C.nowHM(), ts = Date.now(), ov = busyOv('Obteniendo ubicación…');
   const fix = await getFix(); ov.remove(); busy = false;
   if (fix.e && S.geo.req) { toast('No se registró: ' + (GERR[fix.e] || 'sin ubicación')); return false; }
   setTime(g, k, date, hm, fix.e ? { e: fix.e, t: ts } : { la: fix.la, lo: fix.lo, ac: fix.ac, t: ts }, false, user);
   const ls = C.locStatus(S, date, g, k);
-  toast('G' + g + ' ' + kname(k) + ' · ' + hm + (fix.e ? ' · ⚠ sin ubicación' : ls.st === 'far' ? ' · ⚠ lejos del galpón (' + ls.d + ' m)' : ls.st === 'ok' ? ' · 📍 ok' : ' · 📍 guardada'));
+  flash(k, 'G' + g + ' ' + kdone(k), hm + (fix.e ? ' · ⚠ sin ubicación' : ls.st === 'far' ? ' · ⚠ lejos del galpón (' + ls.d + ' m)' : ls.st === 'ok' ? ' · 📍 en el lugar' : ' · 📍 guardada'));
+  showUndo(g, k, date, hm);
   return true;
 }
 const locTag = ls => {
@@ -744,9 +840,9 @@ const mapLink = (g, k, date) => { const L = (C.getReg(S, date, g, k) && S.reg[da
 function editTime(g, k, date) {
   const sc = C.schedule(S)[g], prog = sc[k], cur = C.getReg(S, date, g, k);
   if (cur && !admin) { denied('G' + g + ' ' + kname(k) + ' ya tiene la hora ' + cur + ' registrada. Solo el administrador puede corregirla o borrarla.'); return; }
-  const ov = modal(`<h2>G${g} · ${kname(k)}</h2><div class="note" style="margin-bottom:8px">Noche del ${nightLabel(date)} · programado ${C.fmt(prog) || '—'}</div>
+  const ov = modal(`<h2 class="kt-${k}">${kico(k)} G${g} · ${kname(k)}</h2><div class="note" style="margin-bottom:8px">Noche del ${nightLabel(date)} · programado ${C.fmt(prog) || '—'}</div>
     <label class="f">Hora real</label><input type="time" id="tt" value="${cur || C.fmt(prog) || ''}">
-    <div class="row2" style="margin-top:12px"><button class="btn ok" id="tsave">Guardar</button><button class="btn alt" id="tnow">Ahora</button></div>
+    <div class="row2" style="margin-top:12px"><button class="btn ${k === 'on' ? 'kon' : 'koff'}" id="tsave">Guardar ${kname(k)}</button><button class="btn alt" id="tnow">Ahora</button></div>
     <div class="row2" style="margin-top:8px">${cur ? '<button class="btn red" id="tdel">Borrar</button>' : ''}<button class="btn alt" id="tcan">Cancelar</button></div>`);
   ov.querySelector('#tsave').onclick = async () => {
     if (C.getReg(S, date, g, k) && !admin) return; const v = ov.querySelector('#tt').value; if (!v) { toast('Escribe una hora'); return; }
@@ -781,34 +877,61 @@ function verifCard() {
 }
 
 /* ---------- pantalla: Recorrido ---------- */
+let view = (() => { try { return localStorage.getItem('lg_view') || 'guia'; } catch (e) { return 'guia'; } })(), skip = 0;
+const holdBtn = (g, k, small) => `<button class="hold ${small ? 'sm ' : ''}k-${k}" data-hold="reg" data-g="${g}" data-k="${k}"><span class="fill"></span><span class="lbl">${small ? kico(k) + ' ' + kname(k) : kico(k) + ' MANTÉN PRESIONADO<br>PARA ' + kname(k)}</span></button>`;
+function guideCard(pend, today) {
+  if (!pend.length) return '<div class="card" style="text-align:center;padding:26px"><div style="font-size:48px">✅</div><b style="font-size:18px">Todos los registros de esta noche están completos</b></div>';
+  if (skip >= pend.length) skip = 0;
+  const e = pend[skip], mv = C.moveText(S, e.g), after = pend[skip + 1];
+  let st = '';
+  if (today) {
+    const dm = (evAt(night, e) - Date.now()) / 60000;
+    st = dm > 0.5 ? `<span class="gst">⏳ Faltan ${minTxt(dm)}</span>` : dm > -(+S.tol || 0) ? '<span class="gst">⏰ ES LA HORA</span>' : `<span class="gst late">⚠ ATRASADO ${minTxt(dm)}</span>`;
+  }
+  let h = `<div class="guide k-${e.k}"><div class="gtop"><span>Paso ${e.n} de ${C.events(S).length}</span><span>Grupo ${S.sheds[e.g].g} · ruta #${e.pos}</span></div>
+    <div class="ggal">G${e.g}</div><div class="gmv">${mv.a} ${mv.t}</div>
+    <div class="gact"><span class="ico">${kico(e.k)}</span> ${kname(e.k)}</div>
+    <div class="gprog">Programado ${C.fmt(e.min)}${today ? ' · ahora ' + C.nowHM() : ''}</div>${st}
+    ${today ? holdBtn(e.g, e.k) : `<button class="hold k-${e.k}" data-act="edit" data-g="${e.g}" data-k="${e.k}"><span class="lbl">✎ Registrar hora de ${kname(e.k)}</span></button>`}</div>`;
+  h += `<div class="row2" style="margin-bottom:6px"><button class="btn alt" data-act="gprev" ${skip ? '' : 'disabled style="opacity:.4"'}>◀ Anterior</button><button class="btn alt" data-act="gskip" ${after ? '' : 'disabled style="opacity:.4"'}>Saltar ▶</button></div>`;
+  if (skip) h += '<div class="note" style="text-align:center;margin-bottom:6px">Saltaste ' + skip + ' galpón(es) pendiente(s). <a href="#" data-act="gfirst">Volver al primero</a></div>';
+  if (after) h += `<div class="upnext">Después: <b>G${after.g}</b> · <b class="${after.k}">${kico(after.k)} ${kname(after.k)}</b> ${C.fmt(after.min)}</div>`;
+  return h;
+}
+function alertCard() {
+  if (night !== todayNight()) return '';
+  const perm = notifPerm(), nx = nextAlertInfo();
+  let h = '<div class="card alc"><div class="t">';
+  h += !S.alert.on ? '🔕 Alertas desactivadas por el administrador' : nx ? `⏰ Próximo: <b class="${nx.k}" style="color:${nx.k === 'on' ? 'var(--on)' : 'var(--offc)'}">${kname(nx.k)} ${C.fmt(nx.min)}</b> (${nx.gs.length} galp.) · ${nx.dm > 0 ? 'en ' + minTxt(nx.dm) : 'ahora'}` : '✔ Sin horarios pendientes';
+  h += '</div>';
+  if (S.alert.on && perm !== 'granted' && perm !== 'na') h += '<button data-act="alperm">🔔 Activar alertas</button>';
+  if ('wakeLock' in navigator) h += `<button data-act="wake" class="${wakeOn ? 'on' : ''}">🔆 Pantalla siempre encendida: ${wakeOn ? 'SÍ' : 'NO'}</button>`;
+  return h + '</div>';
+}
 function screenHoy() {
   const ev = C.events(S), today = night === todayNight();
-  const done = ev.filter(e => C.getReg(S, night, e.g, e.k)), next = ev.find(e => !C.getReg(S, night, e.g, e.k));
-  let h = nightBar();
-  h += `<div class="card"><b>${done.length} de ${ev.length} registros hechos</b><div class="prog"><i style="width:${ev.length ? done.length / ev.length * 100 : 0}%"></i></div>`;
-  if (next) h += `<div class="next card" style="margin:8px 0 0"><div class="note">SIGUIENTE (#${next.n})</div><div class="big">G${next.g} · ${kname(next.k)}</div>
-     <div class="note">Programado ${C.fmt(next.min)} · ${C.moveText(S, next.g).a} ${C.moveText(S, next.g).t}</div>
-     <button class="btn full" style="margin-top:8px" data-act="${today ? 'now' : 'edit'}" data-g="${next.g}" data-k="${next.k}">${today ? 'Registrar ahora (' + C.nowHM() + ')' : 'Registrar hora'}</button></div>`;
-  else h += '<div class="note" style="margin-top:6px">✔ Todos los registros de esta noche están completos.</div>';
-  h += '</div>';
+  const pend = ev.filter(e => !C.getReg(S, night, e.g, e.k)), done = ev.length - pend.length;
+  let h = nightBar() + undoCard() + alertCard();
+  h += `<div class="card" style="padding:10px 12px"><b>${done} de ${ev.length} registros hechos</b><div class="prog"><i style="width:${ev.length ? done / ev.length * 100 : 0}%"></i></div></div>`;
+  h += `<div class="vt"><button class="chip ${view === 'guia' ? 'on' : ''}" data-act="view" data-v="guia">🎯 Guiado</button><button class="chip ${view === 'lista' ? 'on' : ''}" data-act="view" data-v="lista">📋 Lista</button></div>`;
+  if (view === 'guia') return h + guideCard(pend, today) + verifCard();
   h += verifCard();
   h += `<div class="chips"><button class="chip ${filter === 'all' ? 'on' : ''}" data-act="flt" data-v="all">Todos</button><button class="chip ${filter === 'pend' ? 'on' : ''}" data-act="flt" data-v="pend">Pendientes</button></div>`;
-  const list = ev.filter(e => filter === 'all' || !C.getReg(S, night, e.g, e.k));
+  const next = pend[0], list = ev.filter(e => filter === 'all' || !C.getReg(S, night, e.g, e.k));
   if (!list.length) h += '<div class="empty">No hay registros pendientes 🎉</div>';
   let prev = null;
   list.forEach((e, i) => {
     if (!prev || prev.k !== e.k || e.off - prev.off > 90) {
       let j = i; while (j + 1 < list.length && list[j + 1].k === e.k && list[j + 1].off - list[j].off <= 90) j++;
       const a = C.fmt(e.min), b = C.fmt(list[j].min);
-      h += `<div class="blk ${e.k}">${kname(e.k)} · ${a}${b !== a ? ' → ' + b : ''}</div>`;
+      h += `<div class="blk ${e.k}">${kico(e.k)} ${kname(e.k)} · ${a}${b !== a ? ' → ' + b : ''}</div>`;
     }
     prev = e;
     const s = stat(e.g, e.k), mv = C.moveText(S, e.g), isNext = next && next.n === e.n;
-    h += `<div class="ev ${s ? (s.bad ? 'bad' : 'done') : ''} ${isNext ? 'nxt' : ''}" data-act="edit" data-g="${e.g}" data-k="${e.k}" data-n="${e.n}">
+    h += `<div class="ev k-${e.k} ${s ? (s.bad ? 'bad' : 'done') : ''} ${isNext ? 'nxt' : ''}" data-act="edit" data-g="${e.g}" data-k="${e.k}" data-n="${e.n}">
       <div class="pos">#${e.pos}</div>
-      <div class="mid"><span class="gal">G${e.g}</span><span class="gc g${S.sheds[e.g].g}">${S.sheds[e.g].g}</span><div class="mv">${mv.a} ${mv.t}</div></div>
-      <div class="tm">prog <b>${C.fmt(e.min)}</b>${s ? `<br>real <b>${s.r}</b> (${s.d > 0 ? '+' : ''}${s.d} min)<br>${locTag(s.ls)}${whoTag(e.g, e.k, night)}` : ''}</div>
-      ${s ? `<div class="chk ${s.bad ? 'bad' : ''}">${s.bad ? '!' : '✔'}</div>` : (today ? `<button class="now" data-act="now" data-g="${e.g}" data-k="${e.k}">Ahora</button>` : '<div style="width:44px"></div>')}</div>`;
+      <div class="mid"><span class="gal">G${e.g}</span><span class="gc g${S.sheds[e.g].g}">${S.sheds[e.g].g}</span><div class="kt">${kico(e.k)} ${kname(e.k)} · ${C.fmt(e.min)}</div><div class="mv">${mv.a} ${mv.t}</div></div>
+      ${s ? `<div class="tm">real <b>${s.r}</b> (${s.d > 0 ? '+' : ''}${s.d} min)<br>${locTag(s.ls)}${whoTag(e.g, e.k, night)}</div><div class="chk ${s.bad ? 'bad' : ''}">${s.bad ? '!' : '✔'}</div>` : (today ? holdBtn(e.g, e.k, true) : '<div style="width:44px"></div>')}</div>`;
   });
   return h;
 }
@@ -830,8 +953,10 @@ function screenCroquis() {
 }
 function shedModal(g) {
   const sc = C.schedule(S)[g], sh = S.sheds[g], mv = C.moveText(S, g);
-  const row = k => { const s = stat(g, k); return `<div class="card" style="margin:0 0 8px;background:#f8fafc"><b>${kname(k)}</b> · prog ${C.fmt(sc[k]) || '—'}${s ? ` · real <b>${s.r}</b> (${s.d > 0 ? '+' : ''}${s.d} min)${s.bad ? ' ⚠' : ''}<br>${locTag(s.ls)}${mapLink(g, k, night)}${whoTag(g, k, night)}` : ''}
-    ${s && !admin ? '<div class="note" style="margin-top:6px">🔒 Registro guardado (solo el administrador puede corregirlo)</div>' : `<div class="row2" style="margin-top:8px"><button class="btn ${s ? 'alt' : ''}" data-m="${night === todayNight() ? 'now' : 'edit'}" data-k="${k}">${s ? 'Volver a registrar' : (night === todayNight() ? 'Ahora' : 'Registrar')}</button><button class="btn alt" data-m="edit" data-k="${k}">Editar hora</button></div>`}</div>`; };
+  const row = k => { const s = stat(g, k), today = night === todayNight(); return `<div class="wbox k-${k}" style="margin:0 0 10px"><b style="font-size:17px">${kico(k)} ${kname(k)}</b> · prog ${C.fmt(sc[k]) || '—'}${s ? ` · real <b>${s.r}</b> (${s.d > 0 ? '+' : ''}${s.d} min)${s.bad ? ' ⚠' : ''}<br>${locTag(s.ls)}${mapLink(g, k, night)}${whoTag(g, k, night)}` : ''}
+    ${s && !admin ? '<div class="note" style="margin-top:6px">🔒 Registro guardado (solo el administrador puede corregirlo)</div>'
+      : s ? `<div class="row2" style="margin-top:8px"><button class="btn alt" data-m="edit" data-k="${k}">Corregir hora</button></div>`
+      : `<div style="margin-top:8px">${today ? holdBtn(g, k, true).replace('hold sm', 'hold sm full') : ''}</div><div class="row2" style="margin-top:8px"><button class="btn alt" data-m="edit" data-k="${k}">Escribir hora</button></div>`}</div>`; };
   const ov = modal(`<h2>G${g} <span class="gc g${sh.g}">${sh.g}</span></h2><div class="note" style="margin-bottom:10px">Ruta #${S.route.indexOf(g) + 1} · ${mv.a} ${mv.t} · Lote ${esc(sh.lote || '—')}</div>${row('on')}${row('off')}<button class="btn alt full" data-m="close">Cerrar</button>`);
   ov.addEventListener('click', e => {
     const b = e.target.closest('[data-m]'); if (!b) return; const m = b.dataset.m, k = b.dataset.k;
@@ -911,6 +1036,8 @@ function screenAjustes() {
   if (!admin) {
     h += `<div class="card"><h3>👤 Usuario actual</h3><div style="font-size:18px;font-weight:700;color:var(--navy);margin-bottom:8px">${esc(user) || '—'}</div><button class="btn alt full" data-act="chuser">Cambiar de usuario</button></div>`;
     h += `<div class="card"><h3>🔒 Modo operador</h3><div class="note" style="margin-bottom:10px">Puedes registrar las horas de prender y apagar. Los horarios, la ruta, los lotes y los datos solo los puede cambiar el administrador.</div><div class="note" style="margin-bottom:10px">📍 Al registrar una hora, la app guarda también la ubicación del celular en ese momento. No se rastrea de forma continua.</div><button class="btn full" data-act="login">Ingresar como administrador</button></div>`;
+    h += `<div class="card"><h3>🔔 Alertas</h3><div class="note" style="margin-bottom:8px">${S.alert.on ? `La app avisa ${S.alert.before} min antes de cada encendido/apagado y a la hora exacta.` : 'Las alertas están desactivadas por el administrador.'} Estado en este celular: <b>${{ granted: 'permitidas ✔', denied: 'bloqueadas ✖ (actívalas en Chrome → Configuración del sitio → Notificaciones)', default: 'sin activar', na: 'solo dentro de la app' }[notifPerm()]}</b></div>
+      <div class="row2"><button class="btn" data-act="alperm">Activar alertas</button><button class="btn alt" data-act="altest">Probar</button></div></div>`;
     if (syncOn()) h += `<div class="card"><h3>☁ Drive</h3><div class="note" style="margin-bottom:8px">Estado: <span id="sst">${syncStatusHtml()}</span></div><button class="btn alt full" data-act="sysync">Sincronizar ahora</button></div>`;
     if (installEvt) h += '<div class="card"><h3>Instalar en este celular</h3><button class="btn full" data-act="install">📲 Instalar la app</button></div>';
     h += `<div class="card"><h3>Descargar</h3><div class="row2"><button class="btn" data-act="xls">⬇ Excel</button><button class="btn alt" data-act="share">📤 Compartir</button></div></div>`;
@@ -921,9 +1048,16 @@ function screenAjustes() {
   h += `<div class="card"><h3>General</h3><div class="g3"><div><label class="f">Inicio del gráfico</label><input type="time" data-f="inicio" value="${S.inicio}"></div>
     <div><label class="f">Tolerancia (min)</label><input type="number" inputmode="numeric" min="0" data-f="tol" value="${S.tol}"></div>
     <div><label class="f">Responsable</label><input type="text" data-f="resp" value="${esc(S.resp)}"></div></div></div>`;
+  h += `<details open><summary>🔔 Alertas y protección contra errores</summary>
+    <div class="g3" style="margin-top:6px"><div><label class="f">Alertas</label><select data-f="alon"><option value="1" ${S.alert.on ? 'selected' : ''}>Activadas</option><option value="0" ${!S.alert.on ? 'selected' : ''}>Desactivadas</option></select></div>
+    <div><label class="f">Avisar antes (min)</label><input type="number" inputmode="numeric" min="0" max="120" data-f="albef" value="${S.alert.before}"></div>
+    <div><label class="f">Repetir si atrasa (min)</label><input type="number" inputmode="numeric" min="0" max="60" data-f="allate" value="${S.alert.late}"></div></div>
+    <label class="f">Pedir confirmación si la hora difiere más de (min) del horario programado</label><input type="number" inputmode="numeric" min="0" data-f="warn" value="${S.warnMin}">
+    <div class="note" style="margin-top:6px">Ejemplo: avisar 10 min antes, a la hora exacta y repetir cada 5 min (hasta 3 veces) si aún hay galpones pendientes. "Repetir" en 0 = no repetir. Confirmación en 0 = nunca preguntar. Estos ajustes se envían a todos los celulares conectados a Drive.</div>
+    <button class="btn alt full" style="margin-top:8px" data-act="altest">🔔 Probar alerta en este celular</button></details>`;
   h += '<details open><summary>Horario de cada grupo</summary>';
   ['A', 'B', 'C', 'D'].forEach(k => { const g = S.groups[k];
-    h += `<div class="gtitle"><span class="gc g${k}">${k}</span> Grupo ${k}</div><div class="g3"><div><label class="f">Prender</label><input type="time" data-f="grp" data-grp="${k}" data-p="on" value="${g.on}"></div>
+    h += `<div class="gtitle"><span class="gc g${k}">${k}</span> Grupo ${k}</div><div class="g3"><div><label class="f">Encender</label><input type="time" data-f="grp" data-grp="${k}" data-p="on" value="${g.on}"></div>
     <div><label class="f">Apagar</label><input type="time" data-f="grp" data-grp="${k}" data-p="off" value="${g.off}"></div>
     <div><label class="f">Min. entre galpones</label><input type="number" inputmode="numeric" min="0" data-f="grp" data-grp="${k}" data-p="gap" value="${g.gap || 0}"></div></div>`; });
   h += '<div class="note" style="margin-top:8px">Min. entre galpones: 0 = todos a la misma hora; 1 = el primer galpón de la ruta a la hora indicada, el siguiente 1 minuto después, etc. Deja vacío un grupo para que sus galpones no se prendan.</div></details>';
@@ -938,7 +1072,7 @@ function screenAjustes() {
   h += '<details><summary>Galpones (grupo, horario propio y lote)</summary><div class="note" style="margin:6px 0">Horario propio vacío = usa el de su grupo.</div>';
   for (let g = 11; g <= 34; g++) { const s = S.sheds[g];
     h += `<div class="shrow"><b>G${g}</b><div class="g3"><div><label class="f">Grupo</label><select data-f="shed" data-g="${g}" data-p="g">${['A', 'B', 'C', 'D'].map(k => `<option ${s.g === k ? 'selected' : ''}>${k}</option>`).join('')}</select></div>
-      <div><label class="f">Prende propio</label><input type="time" data-f="shed" data-g="${g}" data-p="on" value="${s.on}"></div><div><label class="f">Apaga propio</label><input type="time" data-f="shed" data-g="${g}" data-p="off" value="${s.off}"></div></div>
+      <div><label class="f">Enciende propio</label><input type="time" data-f="shed" data-g="${g}" data-p="on" value="${s.on}"></div><div><label class="f">Apaga propio</label><input type="time" data-f="shed" data-g="${g}" data-p="off" value="${s.off}"></div></div>
       <label class="f">Lote</label><select data-f="shed" data-g="${g}" data-p="lote">${S.lotes.map(l => `<option ${s.lote === l.c ? 'selected' : ''}>${esc(l.c)}</option>`).join('')}</select></div>`; }
   h += '</details>';
   h += '<details><summary>Lotes (color y semanas)</summary>';
@@ -952,6 +1086,94 @@ function screenAjustes() {
   h += `<div class="card"><h3>Cómo instalar en Android</h3><div class="note">1) Abre la app en Chrome.<br>2) Menú ⋮ → <b>Instalar app</b> o <b>Añadir a pantalla de inicio</b>.<br>3) Se abre como una app normal y funciona sin internet.</div></div>`;
   return h;
 }
+
+/* ---------- alertas ---------- */
+const notifPerm = () => ('Notification' in window) ? Notification.permission : 'na';
+const FKEY = 'lg_alerts_fired';
+let fired = {}; try { fired = JSON.parse(localStorage.getItem(FKEY) || '{}'); } catch (e) {}
+const saveFired = () => { const lim = Date.now() - 2 * 86400000; Object.keys(fired).forEach(x => { if (fired[x] < lim) delete fired[x]; }); try { localStorage.setItem(FKEY, JSON.stringify(fired)); } catch (e) {} };
+/* Agrupa los pendientes de la noche por acción y hora programada */
+function clusters(n) {
+  const m = {};
+  C.events(S).forEach(e => { if (C.getReg(S, n, e.g, e.k)) return; const key = e.k + '|' + e.min;
+    (m[key] = m[key] || { k: e.k, min: e.min, at: evAt(n, e), gs: [] }).gs.push(e.g); });
+  return Object.values(m).sort((a, b) => a.at - b.at);
+}
+function nextAlertInfo() {
+  const now = Date.now(), c = clusters(todayNight()).find(x => x.at > now - 90 * 60000);
+  return c ? Object.assign({ dm: (c.at - now) / 60000 }, c) : null;
+}
+let actx = null;
+function beep(k) {
+  try {
+    actx = actx || new (window.AudioContext || window.webkitAudioContext)(); if (actx.state === 'suspended') actx.resume();
+    const f = k === 'on' ? [880, 1175, 880, 1175] : [660, 440, 660, 440];
+    f.forEach((hz, i) => { const o = actx.createOscillator(), g = actx.createGain(), t = actx.currentTime + i * 0.32;
+      o.frequency.value = hz; o.type = 'square'; g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.35, t + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.28);
+      o.connect(g); g.connect(actx.destination); o.start(t); o.stop(t + 0.3); });
+  } catch (e) {}
+}
+function sysNotify(title, body, tag) {
+  if (notifPerm() !== 'granted') return;
+  const opt = { body, tag, renotify: true, requireInteraction: true, vibrate: [400, 200, 400, 200, 800], icon: 'icon-192.png', badge: 'icon-192.png', data: { url: location.href.split('#')[0] } };
+  if ('serviceWorker' in navigator && navigator.serviceWorker.controller) navigator.serviceWorker.ready.then(r => r.showNotification(title, opt)).catch(() => { try { new Notification(title, opt); } catch (e) {} });
+  else { try { new Notification(title, opt); } catch (e) {} }
+}
+function fireAlert(c, stage, tag) {
+  const gs = c.gs.map(g => 'G' + g).join(', '), dm = Math.round((c.at - Date.now()) / 60000);
+  const title = (stage === 'pre' ? '⏰ En ' + dm + ' min: ' : stage === 'now' ? '⏰ ES HORA DE ' : '⚠ ATRASADO: ') + kname(c.k) + ' ' + C.fmt(c.min);
+  const body = (c.k === 'on' ? '💡 Encender ' : '🌑 Apagar ') + c.gs.length + ' galpón(es): ' + gs;
+  sysNotify(title, body, tag); beep(c.k);
+  try { navigator.vibrate && navigator.vibrate([400, 200, 400, 200, 800]); } catch (e) {}
+  const old = document.getElementById('abar'); if (old) old.remove();
+  const d = document.createElement('div'); d.className = 'abar k-' + c.k; d.id = 'abar';
+  d.innerHTML = `<h4>${title}</h4><div class="note">${body}</div><div class="row2"><button class="btn" id="ab1">Ir al recorrido</button><button class="btn alt" id="ab2">Entendido</button></div>`;
+  d.querySelector('#ab1').onclick = () => { d.remove(); tab = 'hoy'; view = 'guia'; skip = 0; night = todayNight(); render(); };
+  d.querySelector('#ab2').onclick = () => d.remove();
+  document.body.appendChild(d);
+}
+function checkAlerts() {
+  if (!S.alert || !S.alert.on) return;
+  const n = todayNight(), now = Date.now(), bef = +S.alert.before || 0, late = +S.alert.late || 0;
+  let shown = false;
+  clusters(n).forEach(c => {
+    if (shown) return; const dm = (c.at - now) / 60000, base = n + '|' + c.k + '|' + c.min;
+    let st = null;
+    if (dm > 0) { if (bef > 0 && dm <= bef) st = 'pre'; }
+    else if (dm > -90) { const li = late > 0 ? Math.floor(-dm / late) : 0; st = li === 0 ? 'now' : li <= 3 ? 'late' + li : null; }
+    if (st && !fired[base + '|' + st]) { fired[base + '|' + st] = now; saveFired(); fireAlert(c, st.startsWith('late') ? 'late' : st, base); shown = true; }
+  });
+}
+async function askNotif() {
+  actx = actx || (window.AudioContext || window.webkitAudioContext ? new (window.AudioContext || window.webkitAudioContext)() : null); try { actx && actx.resume(); } catch (e) {}
+  if (notifPerm() === 'na') { toast('Este navegador no permite notificaciones; las alertas sonarán dentro de la app'); return; }
+  if (notifPerm() === 'denied') { modal('<h2>🔔 Notificaciones bloqueadas</h2><div class="note">En Chrome: toca el candado o ⋮ → <b>Configuración del sitio</b> → <b>Notificaciones</b> → <b>Permitir</b>. Si la app está instalada: mantén presionado el ícono → Información de la app → Notificaciones.</div>'); return; }
+  const r = await Notification.requestPermission(); toast(r === 'granted' ? '✔ Alertas activadas' : 'No se activaron las alertas'); render(true);
+}
+/* pantalla siempre encendida */
+let wakeOn = false, wakeLock = null;
+try { wakeOn = localStorage.getItem('lg_wake') === '1'; } catch (e) {}
+async function applyWake() {
+  if (!('wakeLock' in navigator)) return;
+  try { if (wakeOn && !wakeLock && !document.hidden) { wakeLock = await navigator.wakeLock.request('screen'); wakeLock.addEventListener('release', () => { wakeLock = null; }); }
+    else if (!wakeOn && wakeLock) { await wakeLock.release(); wakeLock = null; } } catch (e) {}
+}
+/* botón "mantener presionado" */
+const HOLD_MS = 1000; let holdEl = null, holdT = null, holdStart = 0;
+document.documentElement.style.setProperty('--hold', HOLD_MS + 'ms');
+document.addEventListener('pointerdown', e => {
+  try { if (actx && actx.state === 'suspended') actx.resume(); } catch (x) {}
+  const b = e.target.closest('[data-hold]'); if (!b || holdEl) return;
+  holdEl = b; holdStart = Date.now(); b.classList.add('holding');
+  holdT = setTimeout(() => { const el = holdEl; holdEl = null; if (!el) return; el.classList.remove('holding');
+    try { navigator.vibrate && navigator.vibrate(40); } catch (x) {}
+    const ov = el.closest('.ov'); if (ov) ov.remove();
+    if (el.dataset.hold === 'reg') regNow(+el.dataset.g, el.dataset.k); }, HOLD_MS);
+});
+const holdEnd = () => { if (!holdEl) return; clearTimeout(holdT); holdEl.classList.remove('holding'); holdEl = null;
+  if (Date.now() - holdStart < HOLD_MS) toast('✋ Mantén presionado hasta que se llene el botón'); };
+document.addEventListener('pointerup', holdEnd); document.addEventListener('pointercancel', holdEnd);
+document.addEventListener('contextmenu', e => { if (e.target.closest('[data-hold]')) e.preventDefault(); });
 
 /* ---------- render ---------- */
 const TITLES = { hoy: ['Recorrido', 'Registro minuto a minuto'], croq: ['Croquis', 'Ubicación de galpones y ruta'], sem: ['Semana', 'Registro semanal'], aju: ['Ajustes', 'Horarios, ruta y datos'] };
@@ -970,10 +1192,19 @@ function render(keepScroll) {
 /* ---------- eventos ---------- */
 document.addEventListener('click', e => {
   const nb = e.target.closest('nav button'); if (nb) { tab = nb.dataset.tab; render(); return; }
+  if (e.target.closest('[data-hold]')) return;
   const el = e.target.closest('[data-act]'); if (!el || !el.closest('main, header')) return;
   const a = el.dataset.act, g = +el.dataset.g, k = el.dataset.k;
   if (['up', 'down', 'rroute', 'bk', 'rs', 'clr', 'geocal', 'geosave', 'geoclr', 'geotest', 'sytest', 'syall', 'sylink'].includes(a) && !admin) { denied('Esta acción es solo para el administrador.'); return; }
   if (a === 'chuser') askUser(true);
+  else if (a === 'undo') { const r = lastReg; lastReg = null; if (r && C.getReg(S, r.date, r.g, r.k) === r.hm) { setTime(r.g, r.k, r.date, ''); toast('Registro anulado: G' + r.g + ' ' + kname(r.k)); } render(true); }
+  else if (a === 'view') { view = el.dataset.v; skip = 0; try { localStorage.setItem('lg_view', view); } catch (x) {} render(); }
+  else if (a === 'gskip') { skip++; render(true); }
+  else if (a === 'gprev') { skip = Math.max(0, skip - 1); render(true); }
+  else if (a === 'gfirst') { e.preventDefault(); skip = 0; render(true); }
+  else if (a === 'alperm') askNotif();
+  else if (a === 'altest') { const nx = nextAlertInfo() || { k: 'on', min: C.toMin(C.nowHM()), at: Date.now(), gs: [19, 23, 25] }; fireAlert(nx, 'now', 'prueba'); }
+  else if (a === 'wake') { wakeOn = !wakeOn; try { localStorage.setItem('lg_wake', wakeOn ? '1' : '0'); } catch (x) {} applyWake(); toast(wakeOn ? '🔆 La pantalla no se apagará mientras la app esté abierta' : 'Pantalla en modo normal'); render(true); }
   else if (a === 'sysync') { toast('Sincronizando…'); flush(true).then(ok => { toast(ok ? '✔ Sincronizado' : '⚠ ' + (Q.err || 'sin conexión')); if (ok) render(true); }); }
   else if (a === 'sytest') syTest();
   else if (a === 'syall') { if (!syncOn()) toast('Primero escribe la dirección y la clave'); else { enqueueAll(); toast('Enviando todo a Drive…'); flush(true).then(ok => toast(ok ? '✔ Datos enviados a Drive' : '⚠ ' + (Q.err || 'sin conexión'))); } }
@@ -1014,6 +1245,10 @@ document.addEventListener('change', e => {
   else if (f === 'georad') S.geo.radius = Math.max(5, +v || 40);
   else if (f === 'georeq') S.geo.req = v === '1';
   else if (f === 'resp') S.resp = v;
+  else if (f === 'alon') S.alert.on = v === '1';
+  else if (f === 'albef') S.alert.before = Math.min(120, Math.max(0, +v || 0));
+  else if (f === 'allate') S.alert.late = Math.min(60, Math.max(0, +v || 0));
+  else if (f === 'warn') S.warnMin = Math.max(0, +v || 0);
   else if (f === 'syurl') { SY.url = v.trim(); saveSY(); renderBadge(); return; }
   else if (f === 'sykey') { SY.key = v.trim(); saveSY(); renderBadge(); return; }
   else if (f === 'grp') S.groups[t.dataset.grp][t.dataset.p] = t.dataset.p === 'gap' ? Math.max(0, +v || 0) : v;
@@ -1037,6 +1272,11 @@ window.addEventListener('online', () => flush());
 window.addEventListener('offline', renderBadge);
 document.addEventListener('visibilitychange', () => { if (!document.hidden) flush(); });
 setInterval(() => { if (!document.hidden) flush(); }, 30000);
+/* alertas: revisa cada 15 s; refresca la pantalla de recorrido cada 30 s (cuenta regresiva) */
+setInterval(checkAlerts, 15000); setTimeout(checkAlerts, 2500);
+setInterval(() => { if (tab === 'hoy' && !document.hidden && !holdEl && !busy && !document.querySelector('.ov,.flash')) render(true); }, 30000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) { checkAlerts(); applyWake(); if (tab === 'hoy' && !document.querySelector('.ov')) render(true); } });
+applyWake();
 if (syncOn()) setTimeout(() => flush(), 800);
 })();
 </script>
